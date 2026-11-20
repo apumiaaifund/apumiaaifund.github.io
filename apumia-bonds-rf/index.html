@@ -45,7 +45,8 @@
     <pre id="newsOut">Выберите любого эмитента и нажмите «Запустить мониторинг новостей эмитента»...</pre>
   </div>
 
-  <div class="card">
+  <div class="card" id="nc"><h2>1. Монитор новостей эмитентов</h2><div class="grid"><div><label>Эмитент / Тикер</label><input id="ni" value="ПАО Газпром нефть"></div></div><div class="btns"><button style="background:#0d9488;color:#fff" onclick="rn(0)">Мониторинг новостей</button><button class="btn-bad" onclick="rn(1)">Тест: Негатив / Ковенант</button></div><pre id="no">Нажмите кнопку...</pre></div>
+<div class="card">
     <div class="grid">
       <div><label>Выпуск / Эмитент (ISIN)</label><input id="isin" value="RU000A107XXX (Корп. выпуск, АА-)"></div>
       <div><label>Чистая цена (% в б.п., 100% = 10000)</label><input id="priceBp" type="number" value="9450"></div>
@@ -64,6 +65,8 @@
   </div>
 </div>
 <script>
+function rn(b){let e=document.getElementById("ni").value;document.getElementById("isin").value=e;document.getElementById("no").textContent=JSON.stringify({issuer:e,status:b?"ALERT: Пересмотр рейтинга / ковенант":"OK: Купон выплачен, рейтинг подтверждён"},null,2);if(b){document.getElementById("leverage").value=380;runEval();}}
+
 
 function runNews(neg) {
   const em = document.getElementById('newsIssuer').value.trim() || 'Эмитент РФ';
