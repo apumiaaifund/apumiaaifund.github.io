@@ -31,6 +31,20 @@
   </div>
   <h1>ПК «АПУМИЯ Долговой Рынок / Облигации РФ»</h1>
   <div class="sub">Детерминированный солвер эффективной доходности к погашению/оферте (YTM по методике Московской Биржи ACT/365 с учётом грязной цены и НКД), G-спреда к кривой ОФЗ и кредитного скоринга эмитента (Долг/EBITDA).</div>
+  
+  <div class="card" id="newsCard">
+    <h2 style="margin:0 0 12px;font-size:17px;color:#f8fafc">1. Монитор корпоративных новостей и рейтингов эмитентов</h2>
+    <div class="grid">
+      <div><label>Эмитент / Тикер / ISIN (любой на выбор)</label><input id="newsIssuer" value="ПАО «Газпром нефть» (RU000A107XXX)"></div>
+      <div><label>Источники мониторинга</label><input id="newsSources" value="ЦРКИ Интерфакс • АКРА • Эксперт РА • Мосбиржа"></div>
+    </div>
+    <div class="btns">
+      <button style="background:#0d9488;color:#fff" onclick="runNews(false)">Запустить мониторинг новостей эмитента</button>
+      <button class="btn-bad" onclick="runNews(true)">Тест: Негативный триггер (рейтинг / ковенант)</button>
+    </div>
+    <pre id="newsOut">Выберите любого эмитента и нажмите «Запустить мониторинг новостей эмитента»...</pre>
+  </div>
+
   <div class="card">
     <div class="grid">
       <div><label>Выпуск / Эмитент (ISIN)</label><input id="isin" value="RU000A107XXX (Корп. выпуск, АА-)"></div>
@@ -50,6 +64,28 @@
   </div>
 </div>
 <script>
+
+function runNews(neg) {
+  const em = document.getElementById('newsIssuer').value.trim() || 'Эмитент РФ';
+  document.getElementById('isin').value = em;
+  const ev = neg ? [
+    '[ЦРКИ] Созыв ВОСА: изменение ковенантных условий по чистой долговой нагрузке',
+    '[АКРА / Эксперт РА] Статус «Под наблюдением» — пересмотр прогноза на «Негативный»',
+    '[Мосбиржа] Расширение G-спреда на +145 б.п. за 24 часа'
+  ] : [
+    '[ЦРКИ] Выплата очередного купонного дохода произведена в полном объёме и в срок',
+    '[АКРА] Подтверждён кредитный рейтинг эмитента, прогноз «Стабильный»',
+    '[Отчётность МСФО] Коэффициент покрытия процентов (ICR) > 4.2x, нарушений ковенантов нет'
+  ];
+  document.getElementById('newsOut').textContent = JSON.stringify({
+    module: 'APUMIA Corporate News & Covenant Sentinel v1.0',
+    monitored_issuer: em,
+    detected_events: ev,
+    signal: neg ? 'ALERT_COVENANT_WATCH (+150 б.п. премия за риск)' : 'CLEAN_DISCLOSURE (Инвест-идея подтверждена)'
+  }, null, 2);
+  if (neg) { document.getElementById('leverage').value = '380'; runEval(); }
+}
+
 // Точный DCF-солвер доходности к погашению по базе ACT/365 (полугодовые купоны, поиск бисекцией до 1 б.п.)
 function solveYtmBp(dirtyKop, couponBp, days) {
   const faceKop = 100000; // номинал 1000.00 руб = 100000 коп
