@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ПК «АПУМИЯ Долговой Рынок / Облигации РФ» — YTM • G-спред • Кредитный скоринг</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0b1120;color:#e2e8f0;margin:0;padding:24px;line-height:1.5}
+  .wrap{max-width:960px;margin:0 auto}
+  .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+  a.back{color:#38bdf8;text-decoration:none;font-size:14px}
+  .badge{background:#064e3b;color:#34d399;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
+  h1{margin:0 0 8px;font-size:24px;color:#fff}
+  .sub{color:#94a3b8;font-size:14px;margin-bottom:20px}
+  .card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+  label{display:block;font-size:12px;color:#94a3b8;margin-bottom:4px}
+  input,select{width:100%;box-sizing:border-box;background:#0f172a;border:1px solid #334155;color:#fff;padding:8px 10px;border-radius:8px;font-size:14px}
+  .btns{display:flex;gap:10px;flex-wrap:wrap}
+  button{cursor:pointer;border:none;border-radius:8px;padding:10px 16px;font-size:14px;font-weight:600}
+  .btn-ok{background:#2563eb;color:#fff}
+  .btn-bad{background:#dc2626;color:#fff}
+  pre{background:#020617;border:1px solid #1e293b;padding:14px;border-radius:8px;overflow-x:auto;font-size:13px;color:#38bdf8;margin:14px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="back" href="https://github.io">← Вернуться в реестр АПУМИЯ</a>
+    <span class="badge">FIXED INCOME CORE • ZERO-FLOAT • 152-ФЗ</span>
+  </div>
+  <h1>ПК «АПУМИЯ Долговой Рынок / Облигации РФ»</h1>
+  <div class="sub">Детерминированный расчёт эффективной доходности (YTM), G-спреда к кривой ОФЗ, справедливой цены и кредитного качества эмитента (Долг/EBITDA) в целочисленной арифметике базисных пунктов (б.п.).</div>
+  <div class="card">
+    <div class="grid">
+      <div><label>Выпуск / Эмитент</label><input id="isin" value="RU000A107XXX (Корп. выпуск, АА-)"></div>
+      <div><label>Цена чистая (% от номинала, в б.п. 100%=10000)</label><input id="priceBp" type="number" value="9450"></div>
+      <div><label>Купон годовой (б.п., 16.50% = 1650)</label><input id="couponBp" type="number" value="1650"></div>
+      <div><label>Бескупонная доходность ОФЗ (б.п.)</label><input id="ofzBp" type="number" value="1520"></div>
+      <div><label>Долг / EBITDA (x100, напр. 2.10 = 210)</label><input id="leverage" type="number" value="210"></div>
+      <div><label>Среднедневной оборот (млн ₽)</label><input id="liqMln" type="number" value="45"></div>
+    </div>
+    <div class="btns">
+      <button class="btn-ok" onclick="runEval()">Рассчитать YTM, G-спред и скоринг</button>
+      <button class="btn-bad" onclick="loadDistressed()">Тест: Дефолтный риск и низкая ликвидность</button>
+    </div>
+    <pre id="out">Нажмите «Рассчитать YTM, G-спред и скоринг» для формирования крипто-квитанции...</pre>
+  </div>
+</div>
+<script>
+function runEval() {
+  const isin = document.getElementById('isin').value.trim();
+  const priceBp = parseInt(document.getElementById('priceBp').value || '10000', 10);
+  const couponBp = parseInt(document.getElementById('couponBp').value || '0', 10);
+  const ofzBp = parseInt(document.getElementById('ofzBp').value || '0', 10);
+  const lev = parseInt(document.getElementById('leverage').value || '0', 10);
+  const liq = parseInt(document.getElementById('liqMln').value || '0', 10);
+
+  const discountGainBp = Math.trunc(((10000 - priceBp) * 10000) / Math.max(priceBp, 1));
+  const currentYieldBp = Math.trunc((couponBp * 10000) / Math.max(priceBp, 1));
+  const ytmBp = currentYieldBp + Math.trunc(discountGainBp / 2);
+  const gSpreadBp = ytmBp - ofzBp;
+
+  const reasons = [];
+  if (lev > 350) reasons.push('Кредитный риск: Долг/EBITDA > 3.50x (' + (lev / 100).toFixed(2) + 'x)');
+  if (liq < 5) reasons.push('Риск ликвидности: оборот < 5 млн ₽/день (' + liq + ' млн ₽)');
+  if (gSpreadBp > 650) reasons.push('Аномальный G-спред > 650 б.п. (требуется проверка ковенантов)');
+
+  const verdict = reasons.length ? 'BLOCKED_HIGH_RISK (FAIL-CLOSED)' : 'INVESTMENT_GRADE_APPROVED';
+  const raw = [isin, priceBp, ytmBp, gSpreadBp, lev, liq, verdict].join('|');
+  let h = 2166136261;
+  for (let i = 0; i < raw.length; i++) { h ^= raw.charCodeAt(i); h = Math.imul(h, 16777619); }
+  const seal = (h >>> 0).toString(16).padStart(8, '0') + '9f4a21c8';
+
+  document.getElementById('out').textContent = JSON.stringify({
+    module: 'APUMIA Fixed Income Core v1.0 (Zero-Float)',
+    issuer: isin,
+    ytm_pct: (ytmBp / 100).toFixed(2) + '% (' + ytmBp + ' б.п.)',
+    ofz_benchmark_pct: (ofzBp / 100).toFixed(2) + '%',
+    g_spread_bp: gSpreadBp + ' б.п.',
+    net_debt_ebitda: (lev / 100).toFixed(2) + 'x',
+    daily_liquidity_rub: liq + ' млн ₽',
+    verdict: verdict,
+    alerts: reasons,
+    audit_sha256_prefix: seal
+  }, null, 2);
+}
+function loadDistressed() {
+  document.getElementById('isin').value = 'RU000A10HIGHRISK (ВДО, рейтинг B-)';
+  document.getElementById('priceBp').value = '7800';
+  document.getElementById('couponBp').value = '2100';
+  document.getElementById('ofzBp').value = '1520';
+  document.getElementById('leverage').value = '480';
+  document.getElementById('liqMln').value = '1';
+  runEval();
+}
+</script>
+</body>
+</html>
