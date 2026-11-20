@@ -45,6 +45,19 @@
     <pre id="newsOut">Выберите любого эмитента и нажмите «Запустить мониторинг новостей эмитента»...</pre>
   </div>
 
+  <div class="card" id="newsCard">
+    <h2 style="margin:0 0 12px;font-size:17px;color:#f8fafc">1. Монитор корпоративных новостей и рейтингов эмитентов</h2>
+    <div class="grid">
+      <div><label>Эмитент / Тикер / ISIN (любой на выбор)</label><input id="newsIssuer" value="ПАО «Газпром нефть» (RU000A107XXX)"></div>
+      <div><label>Источники мониторинга</label><input id="newsSources" value="ЦРКИ Интерфакс • АКРА • Эксперт РА • Мосбиржа"></div>
+    </div>
+    <div class="btns">
+      <button style="background:#0d9488;color:#fff" onclick="runNews(false)">Запустить мониторинг новостей эмитента</button>
+      <button class="btn-bad" onclick="runNews(true)">Тест: Негативный триггер (рейтинг / ковенант)</button>
+    </div>
+    <pre id="newsOut">Выберите любого эмитента и нажмите «Запустить мониторинг новостей эмитента»...</pre>
+  </div>
+
   <div class="card" id="nc"><h2>1. Монитор новостей эмитентов</h2><div class="grid"><div><label>Эмитент / Тикер</label><input id="ni" value="ПАО Газпром нефть"></div></div><div class="btns"><button style="background:#0d9488;color:#fff" onclick="rn(0)">Мониторинг новостей</button><button class="btn-bad" onclick="rn(1)">Тест: Негатив / Ковенант</button></div><pre id="no">Нажмите кнопку...</pre></div>
 <div class="card">
     <div class="grid">
