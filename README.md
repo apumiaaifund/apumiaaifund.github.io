@@ -11,3 +11,4 @@ Deterministic Zero-Float Verification & Execution Registry (0-Deps, SHA-256 Prov
 1. **[Notary AI — Self-Hosted Cryptographic Audit Node ($99)](https://lava.top)** — Zero-PII immutable WORM proof registry on Cloudflare Workers + D1 (`apumia.space`).
 2. **[APUMIA Guard Pro — NeuroSymbolic & Embodied AI Safety SDK ($149)](https://lava.top)** — Deterministic sub-millisecond safety firewall (`< 2 ms`, zero-GPU) for AI agents and robotics/VLA models.
 3. **[AEGIS-NIST — AI Governance, CycloneDX CBOM & EU AI Act Kit ($199)](https://app.lava.top/products/eddd68c6-5ee6-4e68-90cb-5685737d254b)** — Air-gapped compliance evidence generator and GitHub Actions CI/CD gate aligned with NIST AI RMF 1.0 & EU AI Act.
+4. **[US Quant & Treasuries Risk Engine — Zero-Float Financial Suite ($149)](https://app.lava.top/products/cadd8037-b156-4202-aa64-d2a94525a902)** — 28-digit Python Decimal DV01, Modified Duration, and 99% VaR/CVaR engine + 3 standalone terminals.
