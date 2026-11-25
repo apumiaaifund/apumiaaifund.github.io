@@ -11,7 +11,7 @@
   if (ref) localStorage.setItem("apumia_ref", ref);
 
   function decorateLinks() {
-    document.querySelectorAll("a[href*=\"lava.top\"], a[href*=\"/deals\"]").forEach((link) => {
+    document.querySelectorAll("a[href*=\"/deals\"]").forEach((link) => {
       try {
         const url = new URL(link.href);
         url.searchParams.set("utm_source", isMainOrDeals ? "storefront" : "sandbox");
