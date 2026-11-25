@@ -1,30 +1,6 @@
-# APUMIA AI Fund
-
-Deterministic Zero-Float Verification & Execution Registry (0-Deps, SHA-256 Proven).
-
-- Live Global Registry: https://apumiaaifund.github.io/
-
----
-
-### Commercial Self-Hosted Kits & SDKs (Instant Delivery via Stripe, Apple Pay & PayPal)
-
-1. **[Notary AI — Self-Hosted Cryptographic Audit Node ($99)](https://lava.top)** — Zero-PII immutable WORM proof registry on Cloudflare Workers + D1 (`apumia.space`).
-2. **[APUMIA Guard Pro — NeuroSymbolic & Embodied AI Safety SDK ($149)](https://lava.top)** — Deterministic sub-millisecond safety firewall (`< 2 ms`, zero-GPU) for AI agents and robotics/VLA models.
-3. **[AEGIS-NIST — AI Governance, CycloneDX CBOM & EU AI Act Kit ($199)](https://app.lava.top/products/eddd68c6-5ee6-4e68-90cb-5685737d254b)** — Air-gapped compliance evidence generator and GitHub Actions CI/CD gate aligned with NIST AI RMF 1.0 & EU AI Act.
-4. **[US Quant & Treasuries Risk Engine — Zero-Float Financial Suite ($149)](https://app.lava.top/products/cadd8037-b156-4202-aa64-d2a94525a902)** — 28-digit Python Decimal DV01, Modified Duration, and 99% VaR/CVaR engine + 3 standalone terminals.
-5. **[APUMIA Credit & IFRS 13 Rust Audit Core ($249)](https://app.lava.top/products/8ba44686-a1b5-49c0-86b8-8a227f37e7cb)** — Deterministic WACC, Merton-KMV, IFRS 13 Level 3 & native Rust accounting audit core + MCP server.
-6. **[APUMI Eng Global v2.1 — RFQ/BOM Sanitizer & IEC 62271-100 Guard ($199)](https://app.lava.top/products/c16d716c-32fa-4fdc-8f31-9a0bdffe2446)** — Reversible semantic masking for industrial RFQs & 28-digit Decimal IEC 62271-100 physics verifier.
-7. **[PQC Migration & ML-DSA-65 Audit Kit — Quantum Readiness Suite ($199)](https://app.lava.top/products/852d8dc0-97bd-4502-9a72-b5a63b1e44b9)** — Zero-dependency RSA/ECDSA scanner, SARIF/CBOM & Merkle proofs aligned with NIST IR 8547.
-8. **[APUMIA DeFi & RWA Invariant Guard — Pre-Execution Firewall ($199)](https://app.lava.top/products/519c4883-9dc9-4d4d-9f19-7e7f4355a75a)** — Non-custodial calldata & slippage firewall + RWA Proof-of-Reserve verifier (VARA / MAS / DORA ready).
-9. **[APUMIA MCP Security & Tool-Call Firewall Kit ($149)](https://app.lava.top/products/65b983c6-48ee-4b7b-b9c8-659517cd4c43)** — Zero-GPU runtime firewall blocking indirect prompt injections and credential egress in MCP tool calls.
-10. **[APUMIA Data Quality Gate (DQG) — 29 IFRS Axioms & EU AI Act Art. 10 ($149)](https://app.lava.top/products/e5d00373-f814-47b0-9eb1-af33be437905)** — Pre-scoring & pre-training data verification engine with 52/52 PROVEN checks and SHA-256 Compliance Evidence Packs.
-11. **[PumpDue — Deterministic Due-Book & Realtor Inspection B2B SaaS Kit ($199)](https://app.lava.top/products/66985433-a248-4394-8b6c-2cb41dd4b014)** — Turnkey vertical SaaS codebase for US septic pumping & POS inspection ($249/mo per truck model).
-12. **[EstateVault B2B2C — White-Label Estate & Probate Portal ($199)](https://app.lava.top/products/6fe9bd61-ac11-418a-9636-a3a9896e0d63)** — Turnkey probate deadline & 28-digit Decimal billing engine for US funeral homes & estate attorneys.
-13. **[QuotePulse — Deterministic CNC Machine Shop Quoting Engine ($199)](https://app.lava.top/products/156bb2f1-d134-4852-a4a1-c25b404ff556)** — Zero-float Quoted-vs-Actual setup/run variance & hit-rate diagnostics for independent CNC machine shops.
-14. **[APUMIA CargoWise — Deterministic Freight, Customs & Incoterms Audit Suite ($199)](https://app.lava.top/products/99f337c0-186b-45a4-b95f-508e488664a9)** — Zero-float customs tariff, Incoterms & multi-currency freight reconciliation.
-15. **[APUMIA Resiliency — 14/14 Proven SRE Invariants & DORA Stress-Test Engine ($199)](https://app.lava.top/products/e180b378-2eab-4499-ba06-e0e989a6fcac)** — Formal DORA operational resilience & chaos stress-test verification.
-16. **[APUMIA Trust — Zero-Dependency Ed25519 & W3C Verifiable Credentials SDK ($149)](https://app.lava.top/products/6f4aafd2-5d92-43ed-8480-55d9536f7e7e)** — Zero-dependency Ed25519 cryptographic signing & W3C VC engine (38/38 PROVEN).
-17. **[APUMIA Finance Extract v2.3 — Native Rust Accounting Journal & Ratio Audit Core ($199)](https://app.lava.top/products/4738b7e3-805b-4350-9803-86902c8fd8f3)** — NaN-safe native Rust general ledger & financial ratio audit engine.
-18. **[APUMIA Code Quality Agent — Deterministic AST Zero-Float & Secret CI Gate ($149)](https://app.lava.top/products/c01021ef-2915-4fdb-bf5a-ec7a7f33d8f7)** — Zero-dependency AST static analysis blocking float drift & credential leaks before merge.
-19. **[APUMIA Smart Router GRE — Deterministic LLM Routing & FinOps Budget Guard ($149)](https://app.lava.top/products/c80d7748-a7af-4a52-9fa0-b2477c654e83)** — Deterministic multi-LLM routing with hard token-cost caps & latency SLAs.
-20. **[APUMIA VC Leader — Deterministic Venture Deal Scoring & Cap-Table Audit Core ($199)](https://app.lava.top/products/84aa80a7-48e9-4a2f-b755-a10f9599c13e)** — 28-digit Decimal venture due-diligence, ARR/burn & cap-table waterfall audit core.
+21. **[APUMIA-BP-2026 Engine ($249)](https://app.lava.top/products/d84a01cd-2001-4a64-bae1-037347fdbe58)** — 60-month 28-digit Decimal Business Plan, Feasibility Study & Notary AI SHA-256 seal generator.
+22. **[APUMIA Finance Journal ($199)](https://app.lava.top/products/34de7c9c-63f3-481d-a41a-0b628124e997)** — Native Rust double-entry general ledger & debit-credit conservation audit engine (9/9 PROVEN).
+23. **[Formula Conformance Checker ($149)](https://app.lava.top/products/1af5b507-3b89-4b1c-8a40-6bb32d45c2c4)** — Zero-float static & runtime verifier for financial, actuarial & valuation models.
+24. **[APUMIA SuperUX v5.3 ($149)](https://app.lava.top/products/fb69bc19-d2d7-48b4-9e6c-7260f1d61092)** — Deterministic enterprise UI state machine & zero-leak client telemetry engine.
+25. **[APUM Markets Enterprise v5.1 ($249)](https://app.lava.top/products/8d6a6281-dad6-4790-899a-02256029097c)** — Institutional multi-asset risk, US equities/derivatives margin & pre-trade execution core.
+26. **[APUMIA AI Audit Trail ($149)](https://app.lava.top/products/feca7845-22e0-4075-9d5f-3824873dcf87)** — EU AI Act Art. 12 zero-dependency immutable agent decision & tool-call logger.
