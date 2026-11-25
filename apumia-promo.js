@@ -1,7 +1,7 @@
 (function () {
   const DEADLINE = new Date("2026-11-29T23:59:59Z").getTime();
   const PROMO_CODE = "0OPJDP";
-  const DEALS_URL = "https://github.io";
+  const DEALS_URL = "https://apumiaaifund.github.io/deals/";
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   const isMainOrDeals = path === "/" || path === "/index.html" || path.startsWith("/deals");
   const SANDBOX_ID = isMainOrDeals ? "main-storefront" : path.replace(/^\//, "");
