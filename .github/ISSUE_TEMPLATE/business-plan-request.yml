@@ -1,0 +1,35 @@
+name: "APUMIA-BP-2026: Verified Business Plan & TEO Request"
+description: "Automated zero-float financial model, feasibility study (TEO), and Notary AI cryptographic stamp."
+title: "[BP-2026] Feasibility Study & Financial Model: "
+labels: ["bp-2026-request"]
+body:
+  - type: input
+    id: industry
+    attributes:
+      label: "Target Industry / Vertical"
+      placeholder: "e.g., B2B SaaS, Industrial Robotics, FinTech Lending, Logistics"
+    validations:
+      required: true
+  - type: input
+    id: capex
+    attributes:
+      label: "Initial Investment / CAPEX (USD)"
+      placeholder: "e.g., 50000"
+      value: "50000"
+    validations:
+      required: true
+  - type: input
+    id: monthly_rev
+    attributes:
+      label: "Projected Month-6 Monthly Revenue (USD)"
+      placeholder: "e.g., 18000"
+      value: "18000"
+    validations:
+      required: true
+  - type: input
+    id: proof_url
+    attributes:
+      label: "Lava.top Order ID or Referral Post URL"
+      placeholder: "https://ycombinator.com... or Order ID"
+    validations:
+      required: true
