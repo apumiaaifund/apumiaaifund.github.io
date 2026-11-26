@@ -33,3 +33,9 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - APUMIA DealGuard ($399): https://apumiaaifund.github.io/deal-guard-demo/
 - APUMIA InsureProof ($399): https://apumiaaifund.github.io/insure-proof-demo/
 - Press Room, RSS Feed & Partner Barter Exchange: https://ainotary-edge.apumia-notary.workers.dev/press
+
+## Specialized Industrial, AI FinOps & Aerospace Engines
+- APUMIA ColdChain Ledger ($249 — FDA FSMA 204): https://apumiaaifund.github.io/coldchain-ledger-demo/
+- APUMIA AgentSpend Firewall ($299 — AI Agent Liability Guard): https://apumiaaifund.github.io/agentspend-firewall-demo/
+- APUMIA GrantAudit 2CFR ($299 — US Federal Grant Cost-Allocation): https://apumiaaifund.github.io/grantaudit-2cfr-demo/
+- APUMIA Orbital-Sim Core ($349 — no_std Rust LEO Telemetry): https://apumiaaifund.github.io/orbital-sim-demo/
