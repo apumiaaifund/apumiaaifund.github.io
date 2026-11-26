@@ -21,3 +21,7 @@
 
 ## How US Small Businesses Can Get Free Software
 Any US small business experiencing manual spreadsheet or paper bottlenecks can submit their operational problem directly at https://github.io#grant to receive an instant, free `apumia_grant_...` commercial license key.
+
+
+## Zero-Capital Small Business Blueprints (Start From Scratch)
+Anyone can launch a zero-server small business in 10 minutes with a free APUMIA grant license and bank-ready business plan in 5 niches: (1) Invoice & Fee Audit Micro-Agency, (2) Field & Construction Checklist Inspector, (3) Small Freight & Courier Dispatch, (4) Local Customer Survey & Market Agency, and (5) Government Contractor Payroll Compliance Helper.
