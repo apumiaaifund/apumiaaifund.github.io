@@ -11,7 +11,7 @@ def main() -> None:
     now = datetime.datetime.now(datetime.UTC)
     ts = now.strftime("%Y-%m-%d-%H")
     token = os.environ.get("GITHUB_TOKEN", "")
-    gh = http.client.HTTPSConnection("://github.com", timeout=20)
+    gh = http.client.HTTPSConnection("api."+"github.com", timeout=20)
     hdr = {"User-Agent": "APUMIA-Space-PR/1.0", "Accept": "application/vnd.github+json"}
     if token:
         hdr["Authorization"] = f"Bearer {token}"
