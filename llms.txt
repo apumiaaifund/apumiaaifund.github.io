@@ -29,7 +29,7 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - APUMIA SBA Use-of-Proceeds & DSCR Auditor (#![no_std] Rust + Zero-Float): https://apumiaaifund.github.io/apumia-sba-audit/
 
 ## US Enterprise & SMB Flagship Suite
-- APUMIA Compliance OS ($499): https://github.io
-- APUMIA DealGuard ($399): https://github.io
-- APUMIA InsureProof ($399): https://github.io
-- Press Room, RSS Feed & Partner Barter Exchange: https://workers.dev
+- APUMIA Compliance OS ($499): https://apumiaaifund.github.io/compliance-os-demo/
+- APUMIA DealGuard ($399): https://apumiaaifund.github.io/deal-guard-demo/
+- APUMIA InsureProof ($399): https://apumiaaifund.github.io/insure-proof-demo/
+- Press Room, RSS Feed & Partner Barter Exchange: https://ainotary-edge.apumia-notary.workers.dev/press
