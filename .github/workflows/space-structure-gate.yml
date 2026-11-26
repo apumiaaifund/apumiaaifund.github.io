@@ -1,0 +1,25 @@
+name: Approve APUMIA Space & Manifesto Structure
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  validate-space-architecture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Manifesto & Space Page Integrity
+        run: |
+          python3 -c '
+          import pathlib
+          m = pathlib.Path("MANIFESTO.md").read_text(encoding="utf-8")
+          s = pathlib.Path("space/index.html").read_text(encoding="utf-8")
+          h = pathlib.Path("index.html").read_text(encoding="utf-8")
+          assert "Unconditional Trust" in m and "Article IV" in m, "Missing Manifesto articles"
+          assert "The APUMIA Society Manifesto" in s, "Missing Manifesto in space/index.html"
+          assert "/space/" in h, "Main Hub missing link to /space/"
+          print("✅ GitHub Structure Check Passed: APUMIA Space & Manifesto architecture approved.")
+          '
