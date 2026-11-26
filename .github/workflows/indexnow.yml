@@ -1,0 +1,13 @@
+name: IndexNow Instant AI & Search Indexing
+on:
+  push:
+    branches: [main]
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify IndexNow API
+        run: |
+          curl -s -X POST "https://indexnow.org" \
+            -H "Content-Type: application/json" \
+            -d '{"host":"apumiaaifund.github.io","key":"apumia2026spaceindexnow8841","keyLocation":"https://apumiaaifund.github.io/apumia2026spaceindexnow8841.txt","urlList":["https://apumiaaifund.github.io/","https://apumiaaifund.github.io/space/","https://apumiaaifund.github.io/surveyqa-autopilot/","https://apumiaaifund.github.io/apumia-field-telemetry/"]}'
