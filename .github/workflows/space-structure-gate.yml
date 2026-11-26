@@ -1,0 +1,15 @@
+name: Approve APUMIA Space & Manifesto Structure
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  validate-space-architecture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Manifesto & Space Page Integrity
+        run: python3 -c 'import pathlib; assert "Unconditional Trust" in pathlib.Path("MANIFESTO.md").read_text() and "The APUMIA Society Manifesto" in pathlib.Path("space/index.html").read_text() and "/space/" in pathlib.Path("index.html").read_text(); print("APPROVED")'
