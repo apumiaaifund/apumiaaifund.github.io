@@ -41,7 +41,7 @@
     <div style="margin-bottom:20px"><a href="https://apumiaaifund.github.io/space/space/" style="display:inline-block;background:#38bdf8;color:#041e2e;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px">🚀 Read the APUMIA Society Manifesto &amp; Space Charter ↗</a></div>
     <div style="margin:18px 0"><a href="https://apumiaaifund.github.io/space/" style="display:inline-block;background:#38bdf8;color:#041e2e;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px">🚀 Read the APUMIA Society Manifesto &amp; Space Charter ↗</a></div>
 <div class="stats">
-      <div class="stat"><b>24 Live Systems</b><span>Autonomous & Zero-Server</span></div>
+      <div class="stat"><b>25 Live Systems</b><span>Autonomous & Zero-Server</span></div>
       <div class="stat"><b>100% Deterministic</b><span>Zero-Float Decimal & Rust Core</span></div>
       <div class="stat"><b>Free SMB Grants</b><span>Submit a real bottleneck → Get instant key</span></div>
     </div>
@@ -54,7 +54,9 @@
     <div class="grid-form">
       <input id="g_company" placeholder="US Business / Company Name (e.g., Apex Builders LLC)">
       <input id="g_email" type="email" placeholder="Work Email (e.g., ops@apexbuilders.com)">
-      <select id="g_product" style="grid-column:1/-1"><option value="surveyqa-autopilot (Starter)">surveyqa-autopilot (Starter)</option>
+      <select id="g_product" style="grid-column:1/-1">
+<option value="apumia-field-telemetry">apumia-field-telemetry (Orbital &amp; Field Ops)</option>
+<option value="surveyqa-autopilot (Starter)">surveyqa-autopilot (Starter)</option>
 <option value="surveyqa-autopilot (Pro)">surveyqa-autopilot (Pro)</option>
 <option value="apumia-mcp-guard">apumia-mcp-guard</option>
 <option value="zero-float-ledger">zero-float-ledger</option>
@@ -79,13 +81,17 @@
 <option value="apumia-defi-guard">apumia-defi-guard</option>
 <option value="aegis-nist">aegis-nist</option></select>
       <textarea id="g_problem" placeholder="Describe your paper or manual workflow bottleneck — we trust you and issue the license immediately..."></textarea>
+<input id="g_capex" placeholder="Target Capital / Loan Amount for Bank Plan (e.g., $75,000)">
+<textarea id="g_goal" placeholder="What development or expansion plan do you need calculated for your bank or auditors? (e.g., SBA loan, fleet/crew expansion)..."></textarea>
     </div>
     <button class="submit-grant" onclick="claimGrant()">Verify Problem & Issue Free Grant Key</button>
     <div id="g_result" style="margin-top:16px"></div>
   </div>
 
-  <h2 style="margin-bottom:16px">Autonomous Solutions Catalog (24 Production Systems)</h2>
-  <div class="catalog"><div class="card">
+  <h2 style="margin-bottom:16px">Autonomous Solutions Catalog (25 Production Systems)</h2>
+  <div class="catalog">
+<div class="card"><div class="tag">ZERO-FLOAT • NO_STD RUST</div><h3>apumia-field-telemetry</h3><p>Deterministic orbital flight telemetry &amp; offline US small business field checklist verifier.</p><div class="actions"><button class="btn-grant" onclick="selectGrant('apumia-field-telemetry')">Free Grant + Bank Plan</button><a class="btn-code" href="https://://github.com" target="_blank">GitHub</a></div></div>
+<div class="card">
       <div class="tag">ZERO-FLOAT • AUTONOMOUS</div>
       <h3>surveyqa-autopilot (Starter)</h3>
       <p>100% Automated Survey QA, Deterministic Decimal Quota Math, 500-Respondent Pre-Launch Simulator &amp; SHA-256 Cryptographic Proof for GitHub Actions</p>
@@ -343,7 +349,7 @@ async function claimGrant() {
         company: document.getElementById('g_company').value,
         email: document.getElementById('g_email').value,
         product: document.getElementById('g_product').value,
-        problem: document.getElementById('g_problem').value
+        problem: document.getElementById('g_problem').value, goal: document.getElementById('g_goal').value, capex: document.getElementById('g_capex').value
       })
     });
     const data = await r.json();
@@ -351,7 +357,7 @@ async function claimGrant() {
       out.innerHTML = '<div style="color:#f87171;font-weight:bold">' + (data.error || 'Validation failed') + '</div>';
       return;
     }
-    out.innerHTML = '<div style="background:#060913;border:1px solid #10b981;padding:16px;border-radius:8px"><b style="color:#10b981">✅ Problem Logged & Grant Approved!</b><br>Your License Key: <code style="color:#38bdf8;font-size:15px">' + data.api_key + '</code></div>';
+    const roi = data.econ ? `<br>Projected Lift: <b style="color:#10b981">$${data.econ.yr.toLocaleString()}/yr</b> • Bank DSCR: <b>${data.econ.dscr}x</b>` : ''; const pbtn = data.plan_url ? `<div style="margin-top:12px"><a href="${data.plan_url}" target="_blank" style="display:inline-block;background:#38bdf8;color:#041e2e;padding:9px 16px;border-radius:7px;text-decoration:none;font-weight:800;font-size:13px">📊 Open Free Bank &amp; Auditor Business Plan (APUMIA-BP-2026) ↗</a></div>` : ''; out.innerHTML = '<div style="background:#060913;border:1px solid #10b981;padding:18px;border-radius:8px"><b style="color:#10b981">✅ Granted on Unconditional Trust!</b><br>License Key: <code style="color:#38bdf8;font-size:15px">' + data.api_key + '</code>' + roi + pbtn + '</div>';
   } catch (e) {
     out.innerHTML = '<div style="color:#f87171">Network error: ' + e + '</div>';
   }
