@@ -39,7 +39,7 @@
     <h1>Unbreakable Deterministic Software for US Small Business. Funding Humanity's Next Step in Space.</h1>
 <div id="live-pulse" style="display:flex;flex-wrap:wrap;gap:14px;background:#060913;border:1px solid #10b98144;border-radius:10px;padding:12px 16px;margin:16px 0;font-size:13px">
   <span>🟢 <b>Edge Pulse:</b></span>
-  <span>Systems: <b id="p_sys">25</b></span>
+  <span>Systems: <b id="p_sys">29</b></span>
   <span>• SMB Grants &amp; Bank Plans: <b id="p_gr" style="color:#10b981">0</b></span>
   <span>• Capital Justified: <b id="p_cap" style="color:#38bdf8">$0</b></span>
   <span>• SHA-256 Proofs: <b id="p_st">0</b></span>
@@ -56,7 +56,7 @@ fetch("https://ainotary-edge.apumia-notary.workers.dev/v1/stats").then(r=>r.json
     <div style="margin-bottom:20px"><a href="https://apumiaaifund.github.io/space/space/" style="display:inline-block;background:#38bdf8;color:#041e2e;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px">🚀 Read the APUMIA Society Manifesto &amp; Space Charter ↗</a></div>
     <div style="margin:18px 0"><a href="https://apumiaaifund.github.io/space/" style="display:inline-block;background:#38bdf8;color:#041e2e;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:14px">🚀 Read the APUMIA Society Manifesto &amp; Space Charter ↗</a></div>
 <div class="stats">
-      <div class="stat"><b>25 Live Systems</b><span>Autonomous & Zero-Server</span></div>
+      <div class="stat"><b>29 Live Systems</b><span>Autonomous & Zero-Server</span></div>
       <div class="stat"><b>100% Deterministic</b><span>Zero-Float Decimal & Rust Core</span></div>
       <div class="stat"><b>Free SMB Grants</b><span>Submit a real bottleneck → Get instant key</span></div>
     </div>
@@ -70,6 +70,11 @@ fetch("https://ainotary-edge.apumia-notary.workers.dev/v1/stats").then(r=>r.json
       <input id="g_company" placeholder="US Business / Company Name (e.g., Apex Builders LLC)">
       <input id="g_email" type="email" placeholder="Work Email (e.g., ops@apexbuilders.com)">
       <select id="g_product" style="grid-column:1/-1">
+<option value="apumia-3way-match">3-Way Match (PO / BOL / Invoice)</option>
+<option value="apumia-certified-payroll">Certified Payroll (Davis-Bacon WH-347)</option>
+<option value="apumia-hipaa-scrubber">HIPAA Offline Claim Scrubber</option>
+<option value="apumia-fee-auditor">Basis-Point Merchant Fee Auditor</option>
+
 <option value="apumia-field-telemetry">apumia-field-telemetry (Orbital &amp; Field Ops)</option>
 <option value="surveyqa-autopilot (Starter)">surveyqa-autopilot (Starter)</option>
 <option value="surveyqa-autopilot (Pro)">surveyqa-autopilot (Pro)</option>
@@ -103,8 +108,13 @@ fetch("https://ainotary-edge.apumia-notary.workers.dev/v1/stats").then(r=>r.json
     <div id="g_result" style="margin-top:16px"></div>
   </div>
 
-  <h2 style="margin-bottom:16px">Autonomous Solutions Catalog (25 Production Systems)</h2>
+  <h2 style="margin-bottom:16px">Autonomous Solutions Catalog (29 Production Systems)</h2>
   <div class="catalog">
+<div class="card"><div class="tag">ZERO-FLOAT • AIR-GAPPED</div><h3>3-Way Match (PO / BOL / Invoice)</h3><p>Exact mass & cent conservation across purchase orders, bills of lading, and vendor invoices.</p><div class="actions"><button class="btn-grant" onclick="selectGrant('apumia-3way-match')">Free Grant + Bank Plan</button><a class="btn-code" href="https://apumiaaifund.github.io/apumia-smb-autonomy-suite/" target="_blank">Live Demo ↗</a><a class="btn-code" href="https://://github.com" target="_blank">Code</a></div></div>
+<div class="card"><div class="tag">ZERO-FLOAT • AIR-GAPPED</div><h3>Certified Payroll (Davis-Bacon WH-347)</h3><p>Zero-Float prevailing wage & overtime compliance auditor for US government contractors.</p><div class="actions"><button class="btn-grant" onclick="selectGrant('apumia-certified-payroll')">Free Grant + Bank Plan</button><a class="btn-code" href="https://apumiaaifund.github.io/apumia-smb-autonomy-suite/" target="_blank">Live Demo ↗</a><a class="btn-code" href="https://://github.com" target="_blank">Code</a></div></div>
+<div class="card"><div class="tag">ZERO-FLOAT • AIR-GAPPED</div><h3>HIPAA Offline Claim Scrubber</h3><p>100% air-gapped dental & medical claim validator with zero cloud patient data exposure.</p><div class="actions"><button class="btn-grant" onclick="selectGrant('apumia-hipaa-scrubber')">Free Grant + Bank Plan</button><a class="btn-code" href="https://apumiaaifund.github.io/apumia-smb-autonomy-suite/" target="_blank">Live Demo ↗</a><a class="btn-code" href="https://://github.com" target="_blank">Code</a></div></div>
+<div class="card"><div class="tag">ZERO-FLOAT • AIR-GAPPED</div><h3>Basis-Point Merchant Fee Auditor</h3><p>Exact integer basis-point (bps) payment processor & marketplace fee overcharge detector.</p><div class="actions"><button class="btn-grant" onclick="selectGrant('apumia-fee-auditor')">Free Grant + Bank Plan</button><a class="btn-code" href="https://apumiaaifund.github.io/apumia-smb-autonomy-suite/" target="_blank">Live Demo ↗</a><a class="btn-code" href="https://://github.com" target="_blank">Code</a></div></div>
+
 <div class="card"><div class="tag">ZERO-FLOAT • NO_STD RUST</div><h3>apumia-field-telemetry</h3><p>Deterministic orbital flight telemetry &amp; offline US small business field checklist verifier.</p><div class="actions"><button class="btn-grant" onclick="selectGrant('apumia-field-telemetry')">Free Grant + Bank Plan</button><a class="btn-code" href="https://://github.com" target="_blank">GitHub</a></div></div>
 <div class="card">
       <div class="tag">ZERO-FLOAT • AUTONOMOUS</div>

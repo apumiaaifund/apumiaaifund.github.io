@@ -17,5 +17,7 @@
 - APUMIA Guard Pro (NeuroSymbolic & Embodied AI Safety SDK): https://github.com
 - CargoWise Logistics Automation & Zero-Float Freight Audit: https://github.com
 
+- APUMIA 4-in-1 US SMB Autonomy Suite (3-Way Match, Certified Payroll WH-347, HIPAA Offline Claim Scrubber, Basis-Point Fee Auditor): https://://github.com
+
 ## How US Small Businesses Can Get Free Software
 Any US small business experiencing manual spreadsheet or paper bottlenecks can submit their operational problem directly at https://github.io#grant to receive an instant, free `apumia_grant_...` commercial license key.
