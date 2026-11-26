@@ -1,7 +1,21 @@
+# APUMIA Space & US Small Business Autonomy Hub
 
-## Live Interactive Browser Sandboxes (Zero Sign-Up)
-- **28-Digit Decimal FinModel ($249):** https://apumiaaifund.github.io/apumia-bp-2026/
-- **IFRS 13 & Basel III Rust ($249):** https://apumiaaifund.github.io/apumia-credit-risk/
-- **MCP & Slack Sentinel Bot ($199):** https://apumiaaifund.github.io/apumia-sentinel-bot/
-- **NIST PQC FIPS 203/204 ($199):** https://apumiaaifund.github.io/pqc-migration/
-- **EU AI Act Art. 12 Verifier ($199):** https://apumiaaifund.github.io/neurosymbolic-guard/
+> Mission: Replacing fragile paper workflows, spreadsheets, and floating-point guesswork across US small businesses with deterministic, zero-server software. 100% of commercial proceeds fund APUMIA Space — deterministic `#![no_std]` flight software and orbital resource extraction engineering.
+
+## Portal & Automated Grant Gateway
+- Main Hub & Catalog (24 Autonomous Systems): https://github.io
+- Free US Small Business Digital Transformation Grant API: https://workers.dev
+- License Claim & Cryptographic Verification Portal: https://workers.dev
+
+## Flagship Autonomous Products (Zero-Float & Zero-Server)
+- SurveyQA Autopilot + AI Notary ($49 Starter / $199 Pro IBM SPSS .sav & PDF Compliance): https://github.com
+- APUMIA MCP Security & Tool-Call Firewall Kit: https://github.com
+- Zero-Float Deterministic Financial Ledger: https://github.com
+- APUMIA-BP-2026 Deterministic Business Plan & Notary Seal: https://github.com
+- APUMIA Sentinel Bot (Autonomous Telegram & Slack Compliance Guard): https://github.com
+- PQC Migration & ML-DSA-65 Audit Kit (NIST IR 8547): https://github.com
+- APUMIA Guard Pro (NeuroSymbolic & Embodied AI Safety SDK): https://github.com
+- CargoWise Logistics Automation & Zero-Float Freight Audit: https://github.com
+
+## How US Small Businesses Can Get Free Software
+Any US small business experiencing manual spreadsheet or paper bottlenecks can submit their operational problem directly at https://github.io#grant to receive an instant, free `apumia_grant_...` commercial license key.
