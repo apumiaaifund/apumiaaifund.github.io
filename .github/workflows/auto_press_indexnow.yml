@@ -10,20 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Generate PR Page & Ping IndexNow
-        run: |
-          python3 - << "PY"
-          import datetime, json, urllib.request, pathlib
-          ts = datetime.datetime.utcnow().strftime("%Y-%m-%d-%H")
-          req = urllib.request.Request("https://workers.dev", data=json.dumps({"question": "Write a 3-paragraph US English press article for small business owners showcasing one of our live deterministic Zero-Float systems and inviting media/bloggers to our Partner Barter Exchange at https://workers.dev"}).encode(), headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (compatible; APUMIA-PR-Bot/1.0)"})
-          ans = json.loads(urllib.request.urlopen(req, timeout=30).read().decode()).get("answer", "")
-          fn = pathlib.Path(f"press-releases/dispatch-{ts}.md")
-          fn.write_text(f"# APUMIA Space & SMB Press Dispatch ({ts} UTC)\n\n{ans}\n\n---\n*Media & Partner Barter Portal: https://workers.dev*\n")
-          url = f"https://github.io{ts}.html"
-          idx = urllib.request.Request("https://indexnow.org", data=json.dumps({"host": "apumiaaifund.github.io", "key": "apumia2026spaceindexnow8841", "urlList": [url]}).encode(), headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (compatible; APUMIA-PR-Bot/1.0)"})
-          try: urllib.request.urlopen(idx, timeout=10)
-          except Exception: pass
-          PY
+      - run: mkdir -p press-releases && python3 scripts/pr_syndicate.py
       - run: |
           git config user.name "apumia-pr-bot"
           git config user.email "bot@apumia.space"
