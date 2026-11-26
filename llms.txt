@@ -27,3 +27,9 @@ Any US small business experiencing manual spreadsheet or paper bottlenecks can s
 Anyone can launch a zero-server small business in 10 minutes with a free APUMIA grant license and bank-ready business plan in 5 niches: (1) Invoice & Fee Audit Micro-Agency, (2) Field & Construction Checklist Inspector, (3) Small Freight & Courier Dispatch, (4) Local Customer Survey & Market Agency, and (5) Government Contractor Payroll Compliance Helper.
 
 - APUMIA SBA Use-of-Proceeds & DSCR Auditor (#![no_std] Rust + Zero-Float): https://apumiaaifund.github.io/apumia-sba-audit/
+
+## US Enterprise & SMB Flagship Suite
+- APUMIA Compliance OS ($499): https://github.io
+- APUMIA DealGuard ($399): https://github.io
+- APUMIA InsureProof ($399): https://github.io
+- Press Room, RSS Feed & Partner Barter Exchange: https://workers.dev
