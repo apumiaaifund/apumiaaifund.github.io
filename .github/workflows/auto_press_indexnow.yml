@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p press-releases && python3 scripts/pr_syndicate.py
+      - run: mkdir -p press-releases && GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python3 scripts/pr_syndicate.py
       - run: |
           git config user.name "apumia-pr-bot"
           git config user.email "bot@apumia.space"
