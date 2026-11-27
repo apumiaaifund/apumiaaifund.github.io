@@ -10,6 +10,7 @@ LAVA = "https" + "://app.lava.top/products"
 PARTNER = "https" + "://apumia.space/partner"
 
 OFFERS = [
+    ("APUMIA Year-End Tax, 1099-NEC & Section 179 Shield ($149)", "Zero-Float Dec 31 equipment write-off & IRS 1099-NEC penalty shield", "https://apumiaaifund.github.io/year-end-tax-shield-demo/", "https://app.lava.top/products/e72dd355-94b0-4f12-913f-f624a401971e"),
     ("APUMIA Merchant & Marketplace Fee Overcharge Auditor ($249)", "Zero-Float bps & junk-fee recovery engine", BASE + "/merchant-fee-auditor-demo/", LAVA + "/592e0c6e-49b6-4dd9-a119-be60e5c952e1"),
     ("APUMIA Certified Payroll & Prevailing Wage Field Guard ($299)", "Zero-Float Davis-Bacon WH-347 crew & 1.5x overtime shield", BASE + "/certified-payroll-guard-demo/", LAVA + "/69b0e2cf-3d84-47ef-b7f3-027cb252e45d"),
     ("APUMIA Carbon-CBAM Border Ledger ($499)", "Zero-Float EU Reg. 2023/956 Scope 1+2 & default-markup savings", BASE + "/carbon-cbam-ledger-demo/", LAVA + "/6e56c5e9-8c33-4750-a699-cc005068d34a"),
