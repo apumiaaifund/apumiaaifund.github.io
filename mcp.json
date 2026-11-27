@@ -1,0 +1,46 @@
+{
+  "schema": "apumia-mcp-registry/1.0",
+  "mission": "Co-creating clarity of attention and household prosperity",
+  "servers": [
+    {
+      "id": "fincen-boi-aml",
+      "system": 51,
+      "repo": "https://://github.com/fincen-boi-aml-demo",
+      "demo": "https://apumiaaifund.github.io/fincen-boi-aml-demo/",
+      "license_url": "https://app.lava.top/products/43497c7c-b630-447e-9bb7-3368ba1ccd6a",
+      "price": "$399"
+    },
+    {
+      "id": "carbon-cbam-ledger",
+      "system": 52,
+      "repo": "https://://github.com/carbon-cbam-ledger-demo",
+      "demo": "https://apumiaaifund.github.io/carbon-cbam-ledger-demo/",
+      "license_url": "https://app.lava.top/products/6e56c5e9-8c33-4750-a699-cc005068d34a",
+      "price": "$499"
+    },
+    {
+      "id": "hipaa-baa-ocr",
+      "system": 53,
+      "repo": "https://://github.com/hipaa-baa-ocr-demo",
+      "demo": "https://apumiaaifund.github.io/hipaa-baa-ocr-demo/",
+      "license_url": "https://app.lava.top/products/79d47619-5296-446e-8faa-db92fa864763",
+      "price": "$449"
+    },
+    {
+      "id": "merchant-fee-auditor",
+      "system": 54,
+      "repo": "https://://github.com/merchant-fee-auditor-demo",
+      "demo": "https://apumiaaifund.github.io/merchant-fee-auditor-demo/",
+      "license_url": "https://app.lava.top/products/592e0c6e-49b6-4dd9-a119-be60e5c952e1",
+      "price": "$249"
+    },
+    {
+      "id": "certified-payroll-guard",
+      "system": 55,
+      "repo": "https://://github.com/certified-payroll-guard-demo",
+      "demo": "https://apumiaaifund.github.io/certified-payroll-guard-demo/",
+      "license_url": "https://app.lava.top/products/69b0e2cf-3d84-47ef-b7f3-027cb252e45d",
+      "price": "$299"
+    }
+  ]
+}
