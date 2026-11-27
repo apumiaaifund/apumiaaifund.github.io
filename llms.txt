@@ -65,3 +65,4 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - APUMIA Year-End Tax, 1099-NEC & Section 179 Shield ($149): https://apumiaaifund.github.io/year-end-tax-shield-demo/
 - 1099 vs. W-2 Misclassification & IRS Section 3509 Penalty Calculator: https://github.io
 - 1099 vs. W-2 Misclassification & IRS Section 3509 Penalty Calculator — Zero-Float: https://apumiaaifund.github.io/1099-misclassification-calculator/
+- CPA & Bookkeeper Year-End Audit Desk (1099-NEC, WH-347, SBA DSCR): https://apumiaaifund.github.io/cpa-audit-desk/

@@ -20,4 +20,5 @@
   <url><loc>https://apumiaaifund.github.io/press/feed.xml</loc><priority>0.85</priority></url>
   <url><loc>https://apumiaaifund.github.io/1099-misclassification-calculator/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://apumiaaifund.github.io/llms-full.txt</loc><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://apumiaaifund.github.io/cpa-audit-desk/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
 </urlset>
