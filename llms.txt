@@ -53,13 +53,13 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - EU AI Act Fine Exposure Calculator: https://apumiaaifund.github.io/eu-ai-act-fine-calculator/
 - AI Agent Runaway Burn Calculator: https://apumiaaifund.github.io/ai-finops-burn-calculator/
 
-- SYSTEM #51 APUMIA FinCEN BOI & AML Guard ($399): https://apumiaaifund.github.io/fincen-boi-aml-demo/
+- APUMIA FinCEN BOI & AML Guard ($399): https://apumiaaifund.github.io/fincen-boi-aml-demo/
 
-- SYSTEM #52 APUMIA Carbon-CBAM Border Ledger ($499): https://apumiaaifund.github.io/carbon-cbam-ledger-demo/
+- APUMIA Carbon-CBAM Border Ledger ($499): https://apumiaaifund.github.io/carbon-cbam-ledger-demo/
 
-- SYSTEM #53 APUMIA HIPAA-BAA & HHS OCR Auditor ($449): https://apumiaaifund.github.io/hipaa-baa-ocr-demo/
+- APUMIA HIPAA-BAA & HHS OCR Auditor ($449): https://apumiaaifund.github.io/hipaa-baa-ocr-demo/
 
-- SYSTEM #54 APUMIA Merchant & Marketplace Fee Overcharge Auditor ($249): https://apumiaaifund.github.io/merchant-fee-auditor-demo/
-- SYSTEM #55 APUMIA Certified Payroll & Prevailing Wage Field Guard ($299): https://apumiaaifund.github.io/certified-payroll-guard-demo/
+- APUMIA Merchant & Marketplace Fee Overcharge Auditor ($249): https://apumiaaifund.github.io/merchant-fee-auditor-demo/
+- APUMIA Certified Payroll & Prevailing Wage Field Guard ($299): https://apumiaaifund.github.io/certified-payroll-guard-demo/
 
-- SYSTEM #56 APUMIA Year-End Tax, 1099-NEC & Section 179 Shield ($149): https://apumiaaifund.github.io/year-end-tax-shield-demo/
+- APUMIA Year-End Tax, 1099-NEC & Section 179 Shield ($149): https://apumiaaifund.github.io/year-end-tax-shield-demo/
