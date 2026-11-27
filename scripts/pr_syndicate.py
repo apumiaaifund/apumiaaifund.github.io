@@ -1,61 +1,39 @@
 from __future__ import annotations
 
 import datetime
-import http.client
 import json
-import os
 import pathlib
+import subprocess
 
-FLAGSHIPS = [
-    ("APUMIA Compliance OS ($499)", "Unified US Business Fine-Exposure & Multi-Regulator Audit Suite (DOT, NFPA 96, EPA FOG, ASME A17.1, FIFRA, Mechanics Liens)", "https://github.io", "https://lava.top"),
-    ("APUMIA DealGuard ($399)", "US Small Business M&A & SBA 7(a) Due Diligence & 1.25x DSCR Verifier", "https://github.io", "https://lava.top"),
-    ("APUMIA InsureProof ($399)", "Cryptographic Commercial Insurance Risk-Proof Passport for 15%-25% Renewal Credits", "https://github.io", "https://lava.top"),
-    ("APUMIA AIAct-NIST Auditor ($499)", "Deterministic EU AI Act Art. 12/14 & NIST AI RMF 1.0 Audit Core with SHA-256 Seals", "https://apumiaaifund.github.io/aiact-nist-auditor-demo/", "https://app.lava.top/products/84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"),
-    ("APUMIA AgentSpend Firewall ($299)", "Zero-Float AI Agent Budget & Liability Circuit Breaker", "https://apumiaaifund.github.io/agentspend-firewall-demo/", "https://app.lava.top/products/26129651-3b9f-4c0b-aae3-5a8f558e6f9e"),
-    ("APUMIA Multi-Client CPA & Auditor Pro Suite ($199)", "Bank-Ready APUMIA-BP-2026 Plans, 3-Way Match, WH-347 & Merchant Fee Audits for 20-80 Clients", "https://apumiaaifund.github.io/cpa-suite/", "https://app.lava.top/products/723f8cbd-4405-4041-a217-b68443c0bd25"),
-    ("APUMIA FinCEN BOI & AML Guard ($399)", "Zero-Float 31 CFR 1010.380 Beneficial Ownership & BSA CTR/Structuring Verifier", "https://apumiaaifund.github.io/fincen-boi-aml-demo/", "https://app.lava.top/products/43497c7c-b630-447e-9bb7-3368ba1ccd6a"),
-    ("APUMIA Carbon-CBAM Border Ledger ($499)", "Zero-Float EU Reg. 2023/956 Embedded Emissions & Certificate Verifier", "https://apumiaaifund.github.io/carbon-cbam-ledger-demo/", "https://app.lava.top/products/6e56c5e9-8c33-4750-a699-cc005068d34a"),
-    ("APUMIA US Enterprise & M&A Full-Stack Bundle ($999)", "Complete US Flagship Triad: Compliance OS + DealGuard + InsureProof ($1,297 value, Save $298)", "https"+"://apumiaaifund.github.io/", "https://app.lava.top/products/7f76c41c-cc31-4130-bb8e-636d47e7749c"),
-    ("APUMIA HIPAA-BAA & HHS OCR Auditor ($449)", "Zero-Float 45 CFR 164.502(e) BAA & HHS OCR Tier 1-4 Penalty Verifier", "https://apumiaaifund.github.io/hipaa-baa-ocr-demo/", "https://app.lava.top/products/79d47619-5296-446e-8faa-db92fa864763"),
-    ("APUMIA Merchant & Marketplace Fee Overcharge Auditor ($249)", "Zero-Float bps & junk-fee recovery engine", "https://apumiaaifund.github.io/merchant-fee-auditor-demo/", "https://app.lava.top/products/592e0c6e-49b6-4dd9-a119-be60e5c952e1"),
-    ("APUMIA Certified Payroll & Prevailing Wage Field Guard ($299)", "Zero-Float Davis-Bacon WH-347 crew & 1.5x overtime shield", "https://apumiaaifund.github.io/certified-payroll-guard-demo/", "https://app.lava.top/products/69b0e2cf-3d84-47ef-b7f3-027cb252e45d"),
+BASE = "https" + "://apumiaaifund.github.io"
+LAVA = "https" + "://app.lava.top/products"
+PARTNER = "https" + "://apumia.space/partner"
+
+OFFERS = [
+    ("APUMIA Merchant & Marketplace Fee Overcharge Auditor ($249)", "Zero-Float bps & junk-fee recovery engine", BASE + "/merchant-fee-auditor-demo/", LAVA + "/592e0c6e-49b6-4dd9-a119-be60e5c952e1"),
+    ("APUMIA Certified Payroll & Prevailing Wage Field Guard ($299)", "Zero-Float Davis-Bacon WH-347 crew & 1.5x overtime shield", BASE + "/certified-payroll-guard-demo/", LAVA + "/69b0e2cf-3d84-47ef-b7f3-027cb252e45d"),
+    ("APUMIA Carbon-CBAM Border Ledger ($499)", "Zero-Float EU Reg. 2023/956 Scope 1+2 & default-markup savings", BASE + "/carbon-cbam-ledger-demo/", LAVA + "/6e56c5e9-8c33-4750-a699-cc005068d34a"),
+    ("APUMIA FinCEN BOI & AML Guard ($399)", "Zero-Float 31 CFR 1010.380 multi-entity UBO + BSA smurfing shield", BASE + "/fincen-boi-aml-demo/", LAVA + "/43497c7c-b630-447e-9bb7-3368ba1ccd6a"),
+    ("APUMIA HIPAA-BAA & HHS OCR Breach Penalty Auditor ($449)", "Zero-Float 45 CFR 164.502(e) vendor BAA & OCR Tier 1-4 penalty auditor", BASE + "/hipaa-baa-ocr-demo/", LAVA + "/79d47619-5296-446e-8faa-db92fa864763"),
+    ("APUMIA Compliance OS ($499)", "Unified US small business fine-exposure & WH-347 overtime auditor", BASE + "/wh347-overtime-calculator/", LAVA + "/0e50d35b-a58e-438a-b35e-98094d1de60e"),
+    ("APUMIA DealGuard ($399)", "Zero-Float SBA 7(a) 1.25x DSCR & M&A due diligence verifier", BASE + "/sba-dscr-calculator/", LAVA + "/38a7a28e-194e-4240-b584-868b40fe3b77"),
+    ("APUMIA InsureProof ($399)", "Commercial insurance renewal credit passport (15-25% savings)", BASE + "/insurance-renewal-calculator/", LAVA + "/df177b1b-16e7-427f-b95d-67cbe2a609fd"),
+    ("US Enterprise & M&A Full-Stack Bundle ($999 - Save $298)", "All 3 flagship cores with automated multi-repo access", BASE + "/", LAVA + "/7f76c41c-cc31-4130-bb8e-636d47e7749c"),
 ]
-
 
 def main() -> None:
     now = datetime.datetime.now(datetime.UTC)
-    ts = now.strftime("%Y-%m-%d-%H")
-    token = os.environ.get("GITHUB_TOKEN", "")
-    gh = http.client.HTTPSConnection("api." + "github.com", timeout=20)
-    hdr = {"User-Agent": "APUMIA-Care-Pulse-PR/2.0", "Accept": "application/vnd.github+json"}
-    if token:
-        hdr["Authorization"] = f"Bearer {token}"
-    gh.request("GET", "/orgs/apumiaaifund/repos?per_page=100&type=public", headers=hdr)
-    repos = [r for r in json.loads(gh.getresponse().read().decode()) if not r.get("fork") and r.get("name") != ".github"]
-    gh.close()
-    f_name, f_desc, f_demo, f_buy = FLAGSHIPS[int(now.timestamp() // 43200) % len(FLAGSHIPS)]
-    press_url = "https://ainotary-edge." + "apumia-notary.workers.dev/press"
-    md = (
-        f"# APUMIA US Flagship Campaign Dispatch: {f_name} ({ts} UTC)\n\n"
-        f"**AUSTIN / GLOBAL** — APUMIA AI Fund today spotlighted **{f_name}** — {f_desc}, "
-        f"anchoring its live ecosystem of {len(repos)} deterministic, zero-float software systems for US small businesses, M&A buyers, and commercial property operators.\n\n"
-        f"- **Live Zero-Float Sandbox (Zero Login):** {f_demo}\n"
-        f"- **Turnkey Commercial License & Instant GitHub Provisioning:** {f_buy}\n\n"
-        f"### Media, Broker & Creator Barter Exchange\n"
-        f"Business journalists, SBA brokers, and SaaS reviewers who publish a live page featuring any APUMIA Space system can claim an instant **Barter Pro Key** (free APUMIA-BP-2026 Zero-Float business plan calculation, 100 Notary AI SHA-256 cryptographic stamps, and 20% referral share) at {press_url}.\n"
-    )
-    pathlib.Path(f"press-releases/dispatch-{ts}.md").write_text(md, encoding="utf-8")
-    idx = http.client.HTTPSConnection("api.indexnow.org", timeout=10)
-    body = json.dumps({"host": "apumiaaifund.github.io", "key": "apumia2026spaceindexnow8841", "urlList": [f"https://github.io{ts}.md"]})
-    try:
-        idx.request("POST", "/indexnow", body=body, headers={"Content-Type": "application/json"})
-        idx.getresponse().read()
-    except OSError as exc:
-        print("INDEXNOW_WARN:", exc)
-    finally:
-        idx.close()
-    print("FLAGSHIP_CAMPAIGN_PUBLISHED:", f_name, "LIVE_SYSTEMS:", len(repos))
-
+    idx = (now.day * 4 + (now.hour // 6)) % len(OFFERS)
+    title, desc, demo, lic = OFFERS[idx]
+    pr_dir = pathlib.Path("press")
+    pr_dir.mkdir(exist_ok=True)
+    stamp = now.strftime("%Y/%m/%d/%H").replace("/", "-")
+    md = f"# APUMIA Release Bulletin ({stamp} UTC)\n\n**Featured System:** {title}\n\n{desc}\n\n- **Free Air-Gapped Calculator:* {demo}\n- **Commercial License (Auto-GitHub Delivery):** {lic}\n- **Partner Page & 20% Referral Settlement:** {PARTNER}\n- **MCP Registry & llms.txt:** {BASE}/mcp.json\n"
+    pathlib.Path(pr_dir, f"release-{stamp}.md").write_text(md)
+    pathlib.Path(pr_dir, "latest.md").write_text(md)
+    payload = json.dumps({"host": "apumiaaifund.github.io", "key": "apumia2026spaceindexnow8841", "keyLocation": BASE + "/apumia2026spaceindexnow8841.txt", "urlList": [demo, BASE + "/press/latest.md", BASE + "/mcp.json", BASE + "/"]})
+    res = subprocess.check_output(["curl", "-sS", "-w", "HTTP:%{http_code}", "-X", "POST", "https" + "://api.indexnow.org/indexnow", "-H", "Content-Type: application/json", "-d", payload], text=True)
+    print("PR_SYNDICATE_OK:", title, res)
 
 if __name__ == "__main__":
     main()
