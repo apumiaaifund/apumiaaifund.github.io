@@ -45,3 +45,5 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - Davis-Bacon WH-347 Overtime & Fringe Calculator (Free Zero-Float DOL Tool): https://apumiaaifund.github.io/wh347-overtime-calculator/
 
 - Commercial Insurance Renewal Credit Calculator (Free Zero-Float Underwriting Tool): https://apumiaaifund.github.io/insurance-renewal-calculator/
+
+- Multi-Client CPA & Fractional CFO Suite ($199, Zero-Float Practice ROI Tool): https://apumiaaifund.github.io/cpa-suite/
