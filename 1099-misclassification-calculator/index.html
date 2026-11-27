@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1099 vs. W-2 Misclassification & IRS Section 3509 Penalty Calculator — Zero-Float</title>
+<meta name="description" content="Deterministic integer-cent IRS Section 3509 & DOL 1099-NEC contractor misclassification penalty calculator for US small businesses and CPAs. Zero float64 drift.">
+<script src="../apumia-care-pulse.js" defer></script>
+<style>
+  :root { --bg:#060913; --card:#0d1424; --border:#1e293b; --accent:#10b981; --space:#38bdf8; --warn:#f59e0b; --danger:#ef4444; --text:#f1f5f9; --muted:#94a3b8; }
+  body { margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+  .wrap { max-width:860px; margin:0 auto; padding:32px 20px; }
+  .nav { margin-bottom:18px; font-size:14px; }
+  .nav a { color:var(--accent); text-decoration:none; font-weight:700; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:26px; margin:18px 0; }
+  .pill { display:inline-block; background:rgba(16,185,129,.12); color:var(--accent); border:1px solid rgba(16,185,129,.35); padding:4px 10px; border-radius:999px; font-size:11px; font-weight:800; letter-spacing:.5px; margin-bottom:10px; }
+  h1 { margin:6px 0 10px; font-size:28px; line-height:1.25; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:18px 0; }
+  label { display:block; font-size:12px; color:var(--muted); font-weight:700; margin-bottom:6px; text-transform:uppercase; }
+  input, select { width:100%; box-sizing:border-box; background:#060913; border:1px solid #334155; color:var(--text); padding:11px 12px; border-radius:8px; font-size:15px; font-weight:600; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:20px 0; }
+  .kpi { background:#060913; border:1px solid var(--border); border-radius:10px; padding:14px; }
+  .kpi span { display:block; font-size:12px; color:var(--muted); }
+  .kpi b { display:block; font-size:22px; margin-top:4px; }
+  .cta-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+  .btn { display:inline-block; padding:12px 18px; border-radius:9px; text-decoration:none; font-weight:800; font-size:14px; }
+  .btn-primary { background:var(--space); color:#041e2e; }
+  .btn-grant { background:var(--accent); color:#042f1e; }
+  .btn-cpa { background:rgba(56,189,248,.14); color:var(--space); border:1px solid rgba(56,189,248,.4); }
+  table { width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--border); }
+  th { color:var(--muted); font-size:12px; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><a href="../">&larr; Back to APUMIA Autonomy Hub (56 Systems)</a></div>
+  <div class="card">
+    <span class="pill">ZERO-FLOAT INTEGER-CENT ENGINE • IRS SECTION 3509 &amp; DOL AUDIT</span>
+    <h1>1099 vs. W-2 Contractor Misclassification &amp; IRS Penalty Calculator</h1>
+    <p style="color:var(--muted);margin:0;">Calculate exact back-tax exposure, IRS Section 3509 assessments, FICA matching, and state labor multipliers before year-end 1099-NEC filings. Runs 100% air-gapped in your browser using 64-bit <code>BigInt</code> integer cents.</p>
+
+    <div class="grid">
+      <div>
+        <label for="cnt">1099-NEC Contractors Audited</label>
+        <input id="cnt" type="number" value="8" min="1" max="5000">
+      </div>
+      <div>
+        <label for="pay">Avg Annual Payout per Contractor ($)</label>
+        <input id="pay" type="number" value="62000" min="600" max="5000000">
+      </div>
+      <div>
+        <label for="years">Audit Lookback Window (Years)</label>
+        <select id="years">
+          <option value="1">1 Tax Year</option>
+          <option value="2" selected>2 Tax Years (Standard IRS Lookback)</option>
+          <option value="3">3 Tax Years (Willful / Extended)</option>
+        </select>
+      </div>
+      <div>
+        <label for="state">Primary Operating Jurisdiction</label>
+        <select id="state">
+          <option value="10000">Federal Baseline (TX, FL, WA, NV)</option>
+          <option value="14500" selected>Strict ABC-Test State (CA, NY, NJ, MA)</option>
+          <option value="12000">Moderate State Labor Enforcement (IL, PA, CO)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <span>Total Audited Contractor Spend</span>
+        <b id="k_spend" style="color:var(--space)">$0.00</b>
+      </div>
+      <div class="kpi">
+        <span>IRS Sec. 3509(a) Unintentional Risk</span>
+        <b id="k_unint" style="color:var(--warn)">$0.00</b>
+      </div>
+      <div class="kpi">
+        <span>Worst-Case Willful + State Exposure</span>
+        <b id="k_will" style="color:var(--danger)">$0.00</b>
+      </div>
+      <div class="kpi">
+        <span>Compliance OS ROI Multiple</span>
+        <b id="k_roi" style="color:var(--accent)">0x</b>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>Liability Component (Deterministic Basis Points)</th><th>Rate</th><th>Assessed Amount</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://lava.top" target="_blank">Get APUMIA Compliance OS Core ($499) &nearr;</a>
+      <a class="btn btn-grant" href="../#grant">Get Free SMB Grant + Bank Plan &rarr;</a>
+      <a class="btn btn-cpa" href="../cpa-suite/">Multi-Client CPA Suite ($199) &rarr;</a>
+    </div>
+  </div>
+</div>
+<script>
+function fmtCents(c) {
+  const neg = c < 0n;
+  const v = neg ? -c : c;
+  return (neg ? "-" : "") + "$" + (v / 100n).toLocaleString("en-US") + "." + (v % 100n).toString().padStart(2, "0");
+}
+function calc() {
+  const cnt = BigInt(Math.max(1, Math.floor(Number(document.getElementById("cnt").value || 1))));
+  const payDollars = BigInt(Math.max(600, Math.floor(Number(document.getElementById("pay").value || 600))));
+  const yrs = BigInt(Math.max(1, Math.floor(Number(document.getElementById("years").value || 1))));
+  const stateMultBps = BigInt(document.getElementById("state").value || "10000");
+
+  const totalSpendCents = cnt * payDollars * 100n * yrs;
+  // IRS Sec 3509(a) when 1099-NEC was filed: 1.5% income tax withholding (150 bps) + 20% of employee FICA (153 bps) + employer FICA 7.65% (765 bps) = 1068 bps
+  const sec3509a = (totalSpendCents * 1068n) / 10000n;
+  // Employer FICA + FUTA baseline (7.65% + 0.60% = 825 bps)
+  const employerFica = (totalSpendCents * 825n) / 10000n;
+  // Willful / unfiled 1099-NEC exposure: 100% employee FICA + 20% withholding + 25% accuracy/failure-to-deposit penalty (3265 bps)
+  const fedWillful = (totalSpendCents * 3265n) / 10000n;
+  // Form W-2 non-filing penalty ($310/form/yr in 2026 -> 31000 cents)
+  const w2Penalty = cnt * yrs * 31000n;
+  const totalWillful = ((fedWillful + w2Penalty) * stateMultBps) / 10000n;
+  const stateSurcharge = totalWillful - (fedWillful + w2Penalty);
+
+  const roi = sec3509a / 49900n;
+  document.getElementById("k_spend").textContent = fmtCents(totalSpendCents);
+  document.getElementById("k_unint").textContent = fmtCents(sec3509a);
+  document.getElementById("k_will").textContent = fmtCents(totalWillful);
+  document.getElementById("k_roi").textContent = (roi > 0n ? roi.toString() : "1") + "x";
+
+  const data = [
+    ["Employer FICA & FUTA Match (7.65% + 0.60%)", "825 bps", fmtCents(employerFica)],
+    ["IRS Sec. 3509(a) Reduced Withholding + 20% EE FICA", "303 bps", fmtCents(sec3509a - employerFica)],
+    ["Willful Reclassification & Failure-to-Deposit Exposure", "3,265 bps", fmtCents(fedWillful)],
+    ["IRS W-2 Information Return Penalties ($310 / contractor-yr)", "Statutory", fmtCents(w2Penalty)],
+    ["State Labor & ABC-Test Surcharge Multiplier", ((Number(stateMultBps)-10000)/100).toFixed(1) + "%", fmtCents(stateSurcharge)]
+  ];
+  document.getElementById("rows").innerHTML = data.map(r => `<tr><td>${r[0]}</td><td><code>${r[1]}</code></td><td><b>${r[2]}</b></td></tr>`).join("");
+}
+["cnt","pay","years","state"].forEach(id => document.getElementById(id).addEventListener("input", calc));
+calc();
+</script>
+</body>
+</html>
