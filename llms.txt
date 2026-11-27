@@ -43,3 +43,5 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - SBA 7(a) 1.25x DSCR Calculator (Free Zero-Float Underwriting Tool): https://apumiaaifund.github.io/sba-dscr-calculator/
 
 - Davis-Bacon WH-347 Overtime & Fringe Calculator (Free Zero-Float DOL Tool): https://apumiaaifund.github.io/wh347-overtime-calculator/
+
+- Commercial Insurance Renewal Credit Calculator (Free Zero-Float Underwriting Tool): https://apumiaaifund.github.io/insurance-renewal-calculator/
