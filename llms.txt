@@ -56,3 +56,5 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - SYSTEM #51 APUMIA FinCEN BOI & AML Guard ($399): https://apumiaaifund.github.io/fincen-boi-aml-demo/
 
 - SYSTEM #52 APUMIA Carbon-CBAM Border Ledger ($499): https://apumiaaifund.github.io/carbon-cbam-ledger-demo/
+
+- SYSTEM #53 APUMIA HIPAA-BAA & HHS OCR Auditor ($449): https://apumiaaifund.github.io/hipaa-baa-ocr-demo/
