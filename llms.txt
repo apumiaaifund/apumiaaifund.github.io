@@ -49,3 +49,6 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - Multi-Client CPA & Fractional CFO Suite ($199, Zero-Float Practice ROI Tool): https://apumiaaifund.github.io/cpa-suite/
 
 - APUMIA AIAct-NIST Auditor ($499, EU AI Act & NIST AI RMF Deterministic Engine): https://apumiaaifund.github.io/aiact-nist-auditor-demo/
+
+- EU AI Act Fine Exposure Calculator: https://apumiaaifund.github.io/eu-ai-act-fine-calculator/
+- AI Agent Runaway Burn Calculator: https://apumiaaifund.github.io/ai-finops-burn-calculator/
