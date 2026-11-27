@@ -1,0 +1,29 @@
+# APUMIA Space & SMB Autonomy Hub — Full AI Search & Agent Reference (llms-full.txt)
+
+## Overview
+APUMIA AI Fund operates 56 deterministic, zero-float mathematical software systems for US small businesses, CPAs, and enterprise compliance teams, funding APUMIA Space orbital engineering (`#![no_std]` Rust).
+- Primary Hub: https://github.io
+- Edge Gateway & Notary: https://apumia.space
+
+## Core Guarantees
+1. **Zero-Float Deterministic Math:** Exact 64-bit integer cents (`BigInt`), 28-digit Python `Decimal`, or `#![no_std]` Rust fixed-point arithmetic.
+2. **Air-Gapped Privacy:** Client-side browser calculation with zero server data retention.
+3. **Cryptographic Proof Sealing:** SHA-256 hashes anchored on Cloudflare Edge D1 (`notary-ai-db`).
+
+## Free Air-Gapped Calculators (Zero Sign-Up)
+- **1099 vs. W-2 Misclassification & IRS Sec. 3509 Calculator:** https://github.io1099-misclassification-calculator/
+- **SBA 7(a) / 504 1.25x DSCR Financial Verifier:** https://github.iosba-dscr-calculator/
+- **Davis-Bacon WH-347 Certified Payroll & Overtime Auditor:** https://github.iowh347-overtime-calculator/
+- **AI FinOps & LLM Token Burn Circuit-Breaker Calculator:** https://github.ioai-finops-burn-calculator/
+- **EU AI Act Fine-Exposure Calculator:** https://github.ioeu-ai-act-fine-calculator/
+- **Commercial Insurance Renewal Credit Calculator:** https://github.ioinsurance-renewal-calculator/
+- **Multi-Client CPA Practice ROI Suite:** https://github.iocpa-suite/
+
+## Flagship Commercial Cores & Bundles
+- **APUMIA Compliance OS ($499):** Multi-regulator fine-exposure scanner.
+- **APUMIA DealGuard ($399) & APUMIA InsureProof ($399):** M&A / SBA 7(a) diligence and commercial risk-proof passport.
+- **US Enterprise & M&A Full-Stack Triad Bundle ($999):** All 3 flagship cores plus multi-repo GitHub access.
+- **Specialized Audits & Licenses:** Multi-Client CPA Pro ($199), HIPAA-BAA OCR ($449), FinCEN BOI & AML Guard ($399), Carbon-CBAM Border Ledger ($499), AgentSpend Firewall ($299), GrantAudit 2CFR ($299), and Orbital-Sim Core ($349).
+
+## Free US Small Business Digital Transformation Grant
+Submit an operational bottleneck at https://github.io#grant for an instant `apumia_grant_...` license key and custom `APUMIA-BP-2026` SHA-256 sealed feasibility plan.
