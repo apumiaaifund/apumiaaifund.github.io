@@ -17,6 +17,8 @@ FLAGSHIPS = [
     ("APUMIA Carbon-CBAM Border Ledger ($499)", "Zero-Float EU Reg. 2023/956 Embedded Emissions & Certificate Verifier", "https://apumiaaifund.github.io/carbon-cbam-ledger-demo/", "https://app.lava.top/products/6e56c5e9-8c33-4750-a699-cc005068d34a"),
     ("APUMIA US Enterprise & M&A Full-Stack Bundle ($999)", "Complete US Flagship Triad: Compliance OS + DealGuard + InsureProof ($1,297 value, Save $298)", "https"+"://apumiaaifund.github.io/", "https://app.lava.top/products/7f76c41c-cc31-4130-bb8e-636d47e7749c"),
     ("APUMIA HIPAA-BAA & HHS OCR Auditor ($449)", "Zero-Float 45 CFR 164.502(e) BAA & HHS OCR Tier 1-4 Penalty Verifier", "https://apumiaaifund.github.io/hipaa-baa-ocr-demo/", "https://app.lava.top/products/79d47619-5296-446e-8faa-db92fa864763"),
+    ("APUMIA Merchant & Marketplace Fee Overcharge Auditor ($249)", "Zero-Float bps & junk-fee recovery engine", "https://apumiaaifund.github.io/merchant-fee-auditor-demo/", "https://app.lava.top/products/592e0c6e-49b6-4dd9-a119-be60e5c952e1"),
+    ("APUMIA Certified Payroll & Prevailing Wage Field Guard ($299)", "Zero-Float Davis-Bacon WH-347 crew & 1.5x overtime shield", "https://apumiaaifund.github.io/certified-payroll-guard-demo/", "https://app.lava.top/products/69b0e2cf-3d84-47ef-b7f3-027cb252e45d"),
 ]
 
 
