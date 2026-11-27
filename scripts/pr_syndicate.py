@@ -25,7 +25,7 @@ def main() -> None:
     ts = now.strftime("%Y-%m-%d-%H")
     token = os.environ.get("GITHUB_TOKEN", "")
     gh = http.client.HTTPSConnection("api." + "github.com", timeout=20)
-    hdr = {"User-Agent": "APUMIA-Space-PR/1.0", "Accept": "application/vnd.github+json"}
+    hdr = {"User-Agent": "APUMIA-Care-Pulse-PR/2.0", "Accept": "application/vnd.github+json"}
     if token:
         hdr["Authorization"] = f"Bearer {token}"
     gh.request("GET", "/orgs/apumiaaifund/repos?per_page=100&type=public", headers=hdr)
