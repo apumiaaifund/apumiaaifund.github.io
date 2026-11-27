@@ -1,6 +1,6 @@
 (function(){
   const CFG={
-    "compliance-os-demo":{name:"APUMIA Compliance OS",price:"$499",uuid:"0e50d35b-a58e-438a-b35e-98094d1de60e"},
+    "sba-dscr-calculator":{name:"APUMIA DealGuard (SBA 7a / M&A)",price:"$399",uuid:"cf81703d-737e-4804-bdab-48163b7c5154"},"wh347-overtime-calculator":{name:"APUMIA Compliance OS",price:"$499",uuid:"0e50d35b-a58e-438a-b35e-98094d1de60e"},"insurance-renewal-calculator":{name:"APUMIA InsureProof Risk Passport",price:"$399",uuid:"57a3163c-41b4-49b2-85f5-596ee58e1293"},"eu-ai-act-fine-calculator":{name:"APUMIA AIAct-NIST Auditor (EU AI Act & NIST)",price:"$499",uuid:"84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"},"ai-finops-burn-calculator":{name:"APUMIA AgentSpend Firewall (AI FinOps)",price:"$299",uuid:"26129651-3b9f-4c0b-aae3-5a8f558e6f9e"},"cpa-suite":{name:"APUMIA Multi-Client CPA & Auditor Pro Suite",price:"$199",uuid:"723f8cbd-4405-4041-a217-b68443c0bd25"},"compliance-os-demo":{name:"APUMIA Compliance OS",price:"$499",uuid:"0e50d35b-a58e-438a-b35e-98094d1de60e"},
     "deal-guard-demo":{name:"APUMIA DealGuard (SBA 7a / M&A)",price:"$399",uuid:"cf81703d-737e-4804-bdab-48163b7c5154"},
     "insure-proof-demo":{name:"APUMIA InsureProof Risk Passport",price:"$399",uuid:"57a3163c-41b4-49b2-85f5-596ee58e1293"},
     "coldchain-ledger-demo":{name:"APUMIA ColdChain Ledger (FDA FSMA 204)",price:"$249",uuid:"dc30635a-ffe4-45e8-a135-7734590f6daa"},
@@ -9,7 +9,7 @@
     "orbital-sim-demo":{name:"APUMIA Orbital-Sim Core (no_std Rust LEO)",price:"$349",uuid:"85de1430-da5b-4665-8d06-62557dc3a04d"},
     "aiact-nist-auditor-demo":{name:"APUMIA AIAct-NIST Auditor (EU AI Act & NIST)",price:"$499",uuid:"84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"}
   };
-  const slug=Object.keys(CFG).find(k=>location.pathname.includes(k))||"compliance-os-demo";
+  const slug=Object.keys(CFG).find(k=>location.pathname.includes(k))||"cpa-suite";
   const meta=CFG[slug];
   const buyUrl="https"+"://app.lava.top/products/"+meta.uuid;
   async function sha256(txt){

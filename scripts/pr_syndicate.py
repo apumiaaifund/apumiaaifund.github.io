@@ -10,6 +10,9 @@ FLAGSHIPS = [
     ("APUMIA Compliance OS ($499)", "Unified US Business Fine-Exposure & Multi-Regulator Audit Suite (DOT, NFPA 96, EPA FOG, ASME A17.1, FIFRA, Mechanics Liens)", "https://github.io", "https://lava.top"),
     ("APUMIA DealGuard ($399)", "US Small Business M&A & SBA 7(a) Due Diligence & 1.25x DSCR Verifier", "https://github.io", "https://lava.top"),
     ("APUMIA InsureProof ($399)", "Cryptographic Commercial Insurance Risk-Proof Passport for 15%-25% Renewal Credits", "https://github.io", "https://lava.top"),
+    ("APUMIA AIAct-NIST Auditor ($499)", "Deterministic EU AI Act Art. 12/14 & NIST AI RMF 1.0 Audit Core with SHA-256 Seals", "https://apumiaaifund.github.io/aiact-nist-auditor-demo/", "https://app.lava.top/products/84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"),
+    ("APUMIA AgentSpend Firewall ($299)", "Zero-Float AI Agent Budget & Liability Circuit Breaker", "https://apumiaaifund.github.io/agentspend-firewall-demo/", "https://app.lava.top/products/26129651-3b9f-4c0b-aae3-5a8f558e6f9e"),
+    ("APUMIA Multi-Client CPA & Auditor Pro Suite ($199)", "Bank-Ready APUMIA-BP-2026 Plans, 3-Way Match, WH-347 & Merchant Fee Audits for 20-80 Clients", "https://apumiaaifund.github.io/cpa-suite/", "https://app.lava.top/products/723f8cbd-4405-4041-a217-b68443c0bd25"),
 ]
 
 
