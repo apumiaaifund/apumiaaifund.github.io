@@ -41,6 +41,14 @@
       "demo": "https://apumiaaifund.github.io/certified-payroll-guard-demo/",
       "license_url": "https://app.lava.top/products/69b0e2cf-3d84-47ef-b7f3-027cb252e45d",
       "price": "$299"
+    },
+    {
+      "id": "year-end-tax-shield",
+      "system": 56,
+      "repo": "https://github.com",
+      "demo": "https://apumiaaifund.github.io/year-end-tax-shield-demo/",
+      "license_url": "https://app.lava.top/products/7f76c41c-cc31-4130-bb8e-636d47e7749c",
+      "price": "$149"
     }
   ]
 }
