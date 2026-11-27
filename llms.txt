@@ -39,3 +39,5 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - APUMIA AgentSpend Firewall ($299 — AI Agent Liability Guard): https://apumiaaifund.github.io/agentspend-firewall-demo/
 - APUMIA GrantAudit 2CFR ($299 — US Federal Grant Cost-Allocation): https://apumiaaifund.github.io/grantaudit-2cfr-demo/
 - APUMIA Orbital-Sim Core ($349 — no_std Rust LEO Telemetry): https://apumiaaifund.github.io/orbital-sim-demo/
+
+- SBA 7(a) 1.25x DSCR Calculator (Free Zero-Float Underwriting Tool): https://apumiaaifund.github.io/sba-dscr-calculator/
