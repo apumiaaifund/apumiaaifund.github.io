@@ -62,133 +62,8 @@ fetch("https://ainotary-edge.apumia-notary.workers.dev/v1/stats").then(r=>r.json
   </div>
 
   <div style="background:#0d1424;border:1px solid #38bdf855;border-radius:14px;padding:24px;margin:24px 0">
-  <div style="color:#38bdf8;font-size:12px;font-weight:800;letter-spacing:.5px">
-ZERO-TO-ONE LAUNCHPAD • START YOUR FIRST SMALL BUSINESS WITH $0</div>
-  <h2 style="margin:6px 0 10px">1. Salary-to-Business Freedom Calculator</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:14px">
-    <label style="font-size:13px;color:#94a3b8">Current Hourly Wage ($)<input id="c_wage" type="number" value="28" oninput="calcFree()" style="width:100%;margin-top:4px;padding:8px;background:#060913;border:1px solid #334155;color:#fff;border-radius:6px"></label>
-    <label style="font-size:13px;color:#94a3b8">Clients / Week<input id="c_cli" type="number" value="6" oninput="calcFree()" style="width:100%;margin-top:4px;padding:8px;background:#060913;border:1px solid #334155;color:#fff;border-radius:6px"></label>
-    <label style="font-size:13px;color:#94a3b8">Avg Fee per Client ($)<input id="c_fee" type="number" value="350" oninput="calcFree()" style="width:100%;margin-top:4px;padding:8px;background:#060913;border:1px solid #334155;color:#fff;border-radius:6px"></label>
-  </div>
-  <div id="c_res" style="background:#060913;border:1px solid #10b98155;padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:14px"></div>
-  <div style="font-size:13px;color:#94a3b8;margin-bottom:8px"><b>2. Or Pick a Zero-Capital Starter Niche (1-Click Pre-Fill):</b></div>
-  <div style="display:flex;flex-wrap:wrap;gap:8px">
-    <button type="button" onclick="pickNiche('apumia-3way-match','Local Invoice & Fee Audit Micro-Agency','Helping local contractors & shops stop 4% billing leakage using deterministic 3-way match','Launch 1-person B2B audit service with $15,000 working capital','15000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Invoice &amp; Fee Audit Agency</button>
-    <button type="button" onclick="pickNiche('apumia-field-telemetry','Field & Job-Site Checklist Inspector','Replacing paper safety & quality checklists for local builders with SHA-256 verified reports','Start mobile field inspection business with $20,000 equipment budget','20000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Field Checklist Inspector</button>
-    <button type="button" onclick="pickNiche('cargowise','Small Freight & Courier Dispatch','Eliminating spreadsheet routing & load reconciliation errors for local vans and box trucks','Launch independent freight dispatch desk with $25,000 microloan','25000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Freight &amp; Courier Dispatch</button>
-    <button type="button" onclick="pickNiche('surveyqa-autopilot','Local Customer Survey & Market Agency','Running deterministic customer satisfaction & quota audits for local clinics and retail','Start local research agency with $10,000 starter capital','10000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Local Survey &amp; QA Agency</button>
-    <button type="button" onclick="pickNiche('apumia-certified-payroll','Gov-Contract Payroll Compliance Helper','Preparing error-free Davis-Bacon WH-347 prevailing wage reports for small subcontractors','Launch government contractor compliance practice with $15,000 capital','15000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Gov Payroll Compliance</button>
-  </div>
-</div>
-<script>
-function calcFree(){
-  const w=+document.getElementById('c_wage').value||0, c=+document.getElementById('c_cli').value||0, f=+document.getElementById('c_fee').value||0;
-  const sal=w*160, biz=Math.round(c*f*4.33), diff=biz-sal;
-  document.getElementById('c_res').innerHTML=`Current Monthly Salary: <b>$${sal.toLocaleString()}</b> → Micro-Business Revenue: <b style="color:#10b981">$${biz.toLocaleString()}/mo</b> (${diff>=0?'<b style="color:#10b981">+$'+diff.toLocaleString()+'/mo freedom surplus</b>':'increase clients or fee to surpass salary'})`;
-}
-function pickNiche(prod,comp,prob,goal,cap){
-  document.getElementById('g_product').value=prod;
-  document.getElementById('g_company').value=comp;
-  document.getElementById('g_problem').value=prob;
-  if(document.getElementById('g_goal')) document.getElementById('g_goal').value=goal;
-  if(document.getElementById('g_capex')) document.getElementById('g_capex').value=cap;
-  document.getElementById('grant').scrollIntoView({behavior:'smooth'});
-}
-calcFree();
-const qp=new URLSearchParams(location.search);
-if(qp.get('cofounder')&&document.getElementById('g_company')){
-  document.getElementById('g_company').value='Co-Founder Partner with '+qp.get('cofounder');
-}
-</script>
-<div style="background:#0d1424;border:1px solid #38bdf855;border-radius:14px;padding:24px;margin:24px 0">
   <div style="color:#38bdf8;font-size:12px;font-weight:800;letter-spacing:.5px"><div style="background:#0f172a;border:1px solid #10b981;border-radius:14px;padding:18px;margin:18px 0"><div style="color:#10b981;font-size:12px;font-weight:800;letter-spacing:.06em;margin-bottom:6px">🇺🇸 US ENTERPRISE &amp; SMB FLAGSHIP SUITE ($399–$499)</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px"><div style="background:#090d16;border:1px solid #1f2937;border-radius:10px;padding:14px"><b><div style="border:1px solid #38bdf866;background:#091326;border-radius:12px;padding:16px;margin:16px 0"><strong>US ENTERPRISE &amp; M&amp;A FULL-STACK BUNDLE ($999 — SAVE $298):</strong> Get all 3 Flagship Cores (Compliance OS + DealGuard + InsureProof, $1,297 value) with automated multi-repo access &rarr; <a href="https://app.lava.top/products/7f76c41c-cc31-4130-bb8e-636d47e7749c" target="_blank" rel="noopener" style="color:#10b981;font-weight:700">Unlock Full Triad Bundle ($999) &nearr;</a></div>
 APUMIA Compliance OS ($499)</b><p style="font-size:13px;color:#94a3b8;margin:6px 0 10px">Unified Fine-Exposure &amp; Multi-Regulator Audit (DOT, NFPA 96, EPA FOG, ASME A17.1, FIFRA, Liens). • <a href="https://apumiaaifund.github.io/wh347-overtime-calculator/" style="color:#38bdf8">Free WH-347 Audit ↗</a> • <a href="1099-misclassification-calculator/" style="color:#fbbf24;text-decoration:none;font-weight:700">Free 1099 vs. W-2 Audit ↗</a></p><a href="https://apumiaaifund.github.io/compliance-os-demo/" target="_blank" style="color:#38bdf8;font-size:13px;font-weight:700">Live Scanner ↗</a> &bull; <a href="https://app.lava.top/products/0e50d35b-a58e-438a-b35e-98094d1de60e" target="_blank" style="color:#10b981;font-size:13px;font-weight:700">Get Core ($499) ↗</a></div><div style="background:#090d16;border:1px solid #1f2937;border-radius:10px;padding:14px"><b>APUMIA DealGuard ($399)</b><p style="font-size:13px;color:#94a3b8;margin:6px 0 10px">Zero-Float US Small Business M&amp;A &amp; SBA 7(a) Due Diligence &amp; 1.25x DSCR Verifier. • <a href="https://apumiaaifund.github.io/sba-dscr-calculator/" style="color:#38bdf8">Free 1.25x DSCR Check ↗</a></p><a href="https://apumiaaifund.github.io/deal-guard-demo/" target="_blank" style="color:#38bdf8;font-size:13px;font-weight:700">Live Verifier ↗</a> &bull; <a href="https://app.lava.top/products/cf81703d-737e-4804-bdab-48163b7c5154" target="_blank" style="color:#10b981;font-size:13px;font-weight:700">Get Core ($399) ↗</a></div><div style="background:#090d16;border:1px solid #1f2937;border-radius:10px;padding:14px"><b>APUMIA InsureProof ($399)</b><p style="font-size:13px;color:#94a3b8;margin:6px 0 10px">Cryptographic Commercial Insurance Risk-Proof Passport for 15%–25% Renewal Credits. • <a href="https://apumiaaifund.github.io/insurance-renewal-calculator/" style="color:#38bdf8">Free Renewal Credit Check ↗</a></p><a href="https://apumiaaifund.github.io/insure-proof-demo/" target="_blank" style="color:#38bdf8;font-size:13px;font-weight:700">Live Passport ↗</a> &bull; <a href="https://app.lava.top/products/57a3163c-41b4-49b2-85f5-596ee58e1293" target="_blank" style="color:#10b981;font-size:13px;font-weight:700">Get Core ($399) ↗</a></div></div></div><script>fetch("https://workers.dev").then(r=>r.json()).then(d=>{const el=document.getElementById("live-sys");if(el&&d.systems)el.textContent=d.systems;}).catch(()=>{});</script>
-ZERO-TO-ONE LAUNCHPAD • START YOUR FIRST SMALL BUSINESS WITH $0</div>
-  <h2 style="margin:6px 0 10px">1. Salary-to-Business Freedom Calculator</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:14px">
-    <label style="font-size:13px;color:#94a3b8">Current Hourly Wage ($)<input id="c_wage" type="number" value="28" oninput="calcFree()" style="width:100%;margin-top:4px;padding:8px;background:#060913;border:1px solid #334155;color:#fff;border-radius:6px"></label>
-    <label style="font-size:13px;color:#94a3b8">Clients / Week<input id="c_cli" type="number" value="6" oninput="calcFree()" style="width:100%;margin-top:4px;padding:8px;background:#060913;border:1px solid #334155;color:#fff;border-radius:6px"></label>
-    <label style="font-size:13px;color:#94a3b8">Avg Fee per Client ($)<input id="c_fee" type="number" value="350" oninput="calcFree()" style="width:100%;margin-top:4px;padding:8px;background:#060913;border:1px solid #334155;color:#fff;border-radius:6px"></label>
-  </div>
-  <div id="c_res" style="background:#060913;border:1px solid #10b98155;padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:14px"></div>
-  <div style="font-size:13px;color:#94a3b8;margin-bottom:8px"><b>2. Or Pick a Zero-Capital Starter Niche (1-Click Pre-Fill):</b></div>
-  <div style="display:flex;flex-wrap:wrap;gap:8px">
-    <button type="button" onclick="pickNiche('apumia-3way-match','Local Invoice & Fee Audit Micro-Agency','Helping local contractors & shops stop 4% billing leakage using deterministic 3-way match','Launch 1-person B2B audit service with $15,000 working capital','15000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Invoice &amp; Fee Audit Agency</button>
-    <button type="button" onclick="pickNiche('apumia-field-telemetry','Field & Job-Site Checklist Inspector','Replacing paper safety & quality checklists for local builders with SHA-256 verified reports','Start mobile field inspection business with $20,000 equipment budget','20000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Field Checklist Inspector</button>
-    <button type="button" onclick="pickNiche('cargowise','Small Freight & Courier Dispatch','Eliminating spreadsheet routing & load reconciliation errors for local vans and box trucks','Launch independent freight dispatch desk with $25,000 microloan','25000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Freight &amp; Courier Dispatch</button>
-    <button type="button" onclick="pickNiche('surveyqa-autopilot','Local Customer Survey & Market Agency','Running deterministic customer satisfaction & quota audits for local clinics and retail','Start local research agency with $10,000 starter capital','10000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Local Survey &amp; QA Agency</button>
-    <button type="button" onclick="pickNiche('apumia-certified-payroll','Gov-Contract Payroll Compliance Helper','Preparing error-free Davis-Bacon WH-347 prevailing wage reports for small subcontractors','Launch government contractor compliance practice with $15,000 capital','15000')" style="background:#1e293b;color:#38bdf8;border:1px solid #38bdf855;padding:8px 12px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700">🚀 Gov Payroll Compliance</button>
-  </div>
-</div>
-<script>
-function calcFree(){
-  const w=+document.getElementById('c_wage').value||0, c=+document.getElementById('c_cli').value||0, f=+document.getElementById('c_fee').value||0;
-  const sal=w*160, biz=Math.round(c*f*4.33), diff=biz-sal;
-  document.getElementById('c_res').innerHTML=`Current Monthly Salary: <b>$${sal.toLocaleString()}</b> → Micro-Business Revenue: <b style="color:#10b981">$${biz.toLocaleString()}/mo</b> (${diff>=0?'<b style="color:#10b981">+$'+diff.toLocaleString()+'/mo freedom surplus</b>':'increase clients or fee to surpass salary'})`;
-}
-function pickNiche(prod,comp,prob,goal,cap){
-  document.getElementById('g_product').value=prod;
-  document.getElementById('g_company').value=comp;
-  document.getElementById('g_problem').value=prob;
-  if(document.getElementById('g_goal')) document.getElementById('g_goal').value=goal;
-  if(document.getElementById('g_capex')) document.getElementById('g_capex').value=cap;
-  document.getElementById('grant').scrollIntoView({behavior:'smooth'});
-}
-calcFree();
-const qp=new URLSearchParams(location.search);
-if(qp.get('cofounder')&&document.getElementById('g_company')){
-  document.getElementById('g_company').value='Co-Founder Partner with '+qp.get('cofounder');
-}
-</script>
-<div id="grant" class="grant-box">
-    <div class="tag" style="color:var(--accent)">CUSTOM WORKFLOW AUDIT &amp; BANK-READY FEASIBILITY PLAN</div>
-    <h2 style="margin:6px 0 8px"><!-- CARE_FOCUS_START --><div style="border:1px solid #10b98144;background:#071521;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:14px"><strong style="color:#10b981">Live Care Radar Focus:</strong> Deepening tools right now for <span>Invoice & Fee Audit, Certified Payroll WH-347, SBA 7(a) DSCR</span></div><!-- CARE_FOCUS_END -->
-We Are Beside You: Co-Creating Clarity of Attention &amp; Household Prosperity</h2>
-    <p style="color:var(--muted);margin:0">Tell us which manual workflow slows down your business. Once verified, our edge notary records your operational problem for our R&D roadmap and immediately issues a free <code>apumia_grant_...</code> license key.</p>
-    <div class="grid-form">
-      <input id="g_company" placeholder="US Business / Company Name (e.g., Apex Builders LLC)">
-      <input id="g_email" type="email" placeholder="Work Email (e.g., ops@apexbuilders.com)">
-      <select id="g_product" style="grid-column:1/-1">
-<option value="apumia-3way-match">3-Way Match (PO / BOL / Invoice)</option>
-<option value="apumia-certified-payroll">Certified Payroll (Davis-Bacon WH-347)</option>
-<option value="apumia-hipaa-scrubber">HIPAA Offline Claim Scrubber</option>
-<option value="apumia-fee-auditor">Basis-Point Merchant Fee Auditor</option>
-<option value="apumia-sba-audit">SBA Use-of-Proceeds & DSCR Auditor</option>
-
-<option value="apumia-field-telemetry">apumia-field-telemetry (Orbital &amp; Field Ops)</option>
-<option value="surveyqa-autopilot (Starter)">surveyqa-autopilot (Starter)</option>
-<option value="surveyqa-autopilot (Pro)">surveyqa-autopilot (Pro)</option>
-<option value="apumia-mcp-guard">apumia-mcp-guard</option>
-<option value="zero-float-ledger">zero-float-ledger</option>
-<option value="apumia-bp-2026">apumia-bp-2026</option>
-<option value="apumia-credit-risk">apumia-credit-risk</option>
-<option value="apumia-sentinel-bot">apumia-sentinel-bot</option>
-<option value="pqc-migration">pqc-migration</option>
-<option value="neurosymbolic-guard">neurosymbolic-guard</option>
-<option value="apumia-us-equities">apumia-us-equities</option>
-<option value="code-quality-agent">code-quality-agent</option>
-<option value="vc-leader">vc-leader</option>
-<option value="smart-router-gre">smart-router-gre</option>
-<option value="apumia-finance-extract">apumia-finance-extract</option>
-<option value="apumia-trust">apumia-trust</option>
-<option value="apumia-resiliency">apumia-resiliency</option>
-<option value="cargowise">cargowise</option>
-<option value="quote-pulse-demo">quote-pulse-demo</option>
-<option value="estate-portal-demo">estate-portal-demo</option>
-<option value="pumpdue-demo">pumpdue-demo</option>
-<option value="apumia-dqg">apumia-dqg</option>
-<option value="apumia-credit">apumia-credit</option>
-<option value="apumia-defi-guard">apumia-defi-guard</option>
-<option value="aegis-nist">aegis-nist</option></select>
-      <textarea id="g_problem" placeholder="Describe your paper or manual workflow bottleneck — we trust you and issue the license immediately..."></textarea>
-<input id="g_capex" placeholder="Target Capital / Loan Amount for Bank Plan (e.g., $75,000)">
-<textarea id="g_goal" placeholder="What development or expansion plan do you need calculated for your bank or auditors? (e.g., SBA loan, fleet/crew expansion)..."></textarea>
-    </div>
-    <button class="submit-grant" onclick="claimGrant()">Verify Problem & Issue Free Grant Key</button>
-    <div id="g_result" style="margin-top:16px"></div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,#0d1424 0%,#131c31 100%);border:1px solid #f59e0b66;border-radius:14px;padding:26px;margin:28px 0">
   <div style="color:#f59e0b;font-size:12px;font-weight:800;letter-spacing:.5px">FOR US CPAs, BOOKKEEPERS &amp; FRACTIONAL CFOs</div>
   <h2 style="margin:6px 0 8px">Manage 20–80 Small Business Clients with One Deterministic Audit Suite</h2>
   <p style="color:#94a3b8;margin:0 0 16px">Generate bank-ready <b>APUMIA-BP-2026</b> financial plans (with DSCR &amp; SHA-256 seals) and run air-gapped <b>3-Way Match</b>, <b>Certified Payroll WH-347</b>, and <b>Merchant Fee</b> audits across your entire client portfolio. <a href="https://apumiaaifund.github.io/cpa-suite/" style="color:#38bdf8">Calculate Practice ROI ↗</a></p>
@@ -461,6 +336,56 @@ ColdChain Ledger ($249)</b><p style="font-size:13px;color:#94a3b8;margin:6px 0">
 <div class="card"><span class="badge">ZERO-FLOAT • COMMERCIAL LICENSE</span><h3>SuperUX v53 Deterministic UI & State Verifier ($199)</h3><p>Zero-drift finite-state frontend verification & deterministic audit UI engine.</p><a class="btn-buy" href="https://app.lava.top/products/fb69bc19-d2d7-48b4-9e6c-7260f1d61092" target="_blank">Buy Commercial License ($199) &nearr;</a> &bull; <a href="https://github.com/apumiaaifund/superux-v53-core" target="_blank" style="color:#94a3b8;font-size:13px">GitHub</a></div>
 <div class="card"><span class="badge">ZERO-FLOAT • COMMERCIAL LICENSE</span><h3>APUM Markets v5 Execution & Risk Core ($349)</h3><p>Deterministic integer-tick orderbook risk, margin & slippage invariant verifier.</p><a class="btn-buy" href="https://app.lava.top/products/8d6a6281-dad6-4790-899a-02256029097c" target="_blank">Buy Commercial License ($349) &nearr;</a> &bull; <a href="https://github.com/apumiaaifund/apum-markets-v5-core" target="_blank" style="color:#94a3b8;font-size:13px">GitHub</a></div>
 <div class="card"><span class="badge">ZERO-FLOAT • COMMERCIAL LICENSE</span><h3>All-Systems Enterprise Full-Catalog Bundle ($1,999)</h3><p>Complete commercial source-code access across all 56 APUMIA deterministic cores & future releases.</p><a class="btn-buy" href="https://app.lava.top/products/1fb40de3-dafe-4943-b915-aba611ec38cb" target="_blank">Buy Commercial License ($1,999) &nearr;</a></div>
+<div style="margin-top:28px"></div>
+<div id="grant" class="grant-box">
+    <div class="tag" style="color:var(--accent)">CUSTOM WORKFLOW AUDIT &amp; BANK-READY FEASIBILITY PLAN</div>
+    <h2 style="margin:6px 0 8px"><!-- CARE_FOCUS_START --><div style="border:1px solid #10b98144;background:#071521;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:14px"><strong style="color:#10b981">Live Care Radar Focus:</strong> Deepening tools right now for <span>Invoice & Fee Audit, Certified Payroll WH-347, SBA 7(a) DSCR</span></div><!-- CARE_FOCUS_END -->
+We Are Beside You: Co-Creating Clarity of Attention &amp; Household Prosperity</h2>
+    <p style="color:var(--muted);margin:0">Tell us which manual workflow slows down your business. Once verified, our edge notary records your operational problem for our R&D roadmap and immediately issues a free <code>apumia_grant_...</code> license key.</p>
+    <div class="grid-form">
+      <input id="g_company" placeholder="US Business / Company Name (e.g., Apex Builders LLC)">
+      <input id="g_email" type="email" placeholder="Work Email (e.g., ops@apexbuilders.com)">
+      <select id="g_product" style="grid-column:1/-1">
+<option value="apumia-3way-match">3-Way Match (PO / BOL / Invoice)</option>
+<option value="apumia-certified-payroll">Certified Payroll (Davis-Bacon WH-347)</option>
+<option value="apumia-hipaa-scrubber">HIPAA Offline Claim Scrubber</option>
+<option value="apumia-fee-auditor">Basis-Point Merchant Fee Auditor</option>
+<option value="apumia-sba-audit">SBA Use-of-Proceeds & DSCR Auditor</option>
+
+<option value="apumia-field-telemetry">apumia-field-telemetry (Orbital &amp; Field Ops)</option>
+<option value="surveyqa-autopilot (Starter)">surveyqa-autopilot (Starter)</option>
+<option value="surveyqa-autopilot (Pro)">surveyqa-autopilot (Pro)</option>
+<option value="apumia-mcp-guard">apumia-mcp-guard</option>
+<option value="zero-float-ledger">zero-float-ledger</option>
+<option value="apumia-bp-2026">apumia-bp-2026</option>
+<option value="apumia-credit-risk">apumia-credit-risk</option>
+<option value="apumia-sentinel-bot">apumia-sentinel-bot</option>
+<option value="pqc-migration">pqc-migration</option>
+<option value="neurosymbolic-guard">neurosymbolic-guard</option>
+<option value="apumia-us-equities">apumia-us-equities</option>
+<option value="code-quality-agent">code-quality-agent</option>
+<option value="vc-leader">vc-leader</option>
+<option value="smart-router-gre">smart-router-gre</option>
+<option value="apumia-finance-extract">apumia-finance-extract</option>
+<option value="apumia-trust">apumia-trust</option>
+<option value="apumia-resiliency">apumia-resiliency</option>
+<option value="cargowise">cargowise</option>
+<option value="quote-pulse-demo">quote-pulse-demo</option>
+<option value="estate-portal-demo">estate-portal-demo</option>
+<option value="pumpdue-demo">pumpdue-demo</option>
+<option value="apumia-dqg">apumia-dqg</option>
+<option value="apumia-credit">apumia-credit</option>
+<option value="apumia-defi-guard">apumia-defi-guard</option>
+<option value="aegis-nist">aegis-nist</option></select>
+      <textarea id="g_problem" placeholder="Describe your paper or manual workflow bottleneck — we trust you and issue the license immediately..."></textarea>
+<input id="g_capex" placeholder="Target Capital / Loan Amount for Bank Plan (e.g., $75,000)">
+<textarea id="g_goal" placeholder="What development or expansion plan do you need calculated for your bank or auditors? (e.g., SBA loan, fleet/crew expansion)..."></textarea>
+    </div>
+    <button class="submit-grant" onclick="claimGrant()">Verify Problem & Issue Free Grant Key</button>
+    <div id="g_result" style="margin-top:16px"></div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#0d1424 0%,#131c31 100%);border:1px solid #f59e0b66;border-radius:14px;padding:26px;margin:28px 0">
     </div></div>
 </div>
 
@@ -497,7 +422,7 @@ async function claimGrant() {
 <script src="/apumia-care-pulse.js"></script>
 <div style="max-width:1120px;margin:24px auto 36px;padding-top:16px;border-top:1px solid #1e293b;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#64748b">
   <span>&copy; 2026 APUMIA SMB &amp; CPA Audit Hub &bull; Zero-Float Deterministic Infrastructure</span>
-  <span><a href="press-releases/" style="color:#94a3b8;text-decoration:none">Press Room &amp; Media Kit &nearr;</a> &bull; <a href="cpa-audit-desk/" style="color:#94a3b8;text-decoration:none">CPA Year-End Desk &nearr;</a></span>
+  <span><a href="press-releases/" style="color:#94a3b8;text-decoration:none">Press Room &amp; Media Kit &nearr;</a> &bull; <a href="cpa-audit-desk/" style="color:#94a3b8;text-decoration:none">CPA Year-End Desk &nearr;</a> &bull; <a href="space/" style="color:#64748b;text-decoration:none">APUMIA Space Charter</a></span>
 </div>
 </body>
 </html>
