@@ -72,5 +72,19 @@
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a");
+  if (!a) return;
+  const niche = (a.href && a.href.includes("lava.top")) ? "cpa_desk_checkout_click" : "cpa_desk_tool_click";
+  fetch("https://apumia.space", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ niche }),
+    keepalive: true
+  }).catch(() => {});
+});
+</script>
 </body>
 </html>

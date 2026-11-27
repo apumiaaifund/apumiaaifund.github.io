@@ -140,5 +140,22 @@ function calc() {
 ["cnt","pay","years","state"].forEach(id => document.getElementById(id).addEventListener("input", calc));
 calc();
 </script>
+
+<script>
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("button, a");
+  if (!btn) return;
+  const txt = (btn.textContent || "").toLowerCase();
+  const niche = txt.includes("lava") || (btn.href && btn.href.includes("lava.top"))
+    ? "1099_checkout_click"
+    : "1099_calc_run";
+  fetch("https://apumia.space", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ niche }),
+    keepalive: true
+  }).catch(() => {});
+});
+</script>
 </body>
 </html>
