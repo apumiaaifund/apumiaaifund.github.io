@@ -15,6 +15,7 @@ FLAGSHIPS = [
     ("APUMIA Multi-Client CPA & Auditor Pro Suite ($199)", "Bank-Ready APUMIA-BP-2026 Plans, 3-Way Match, WH-347 & Merchant Fee Audits for 20-80 Clients", "https://apumiaaifund.github.io/cpa-suite/", "https://app.lava.top/products/723f8cbd-4405-4041-a217-b68443c0bd25"),
     ("APUMIA FinCEN BOI & AML Guard ($399)", "Zero-Float 31 CFR 1010.380 Beneficial Ownership & BSA CTR/Structuring Verifier", "https://apumiaaifund.github.io/fincen-boi-aml-demo/", "https://app.lava.top/products/43497c7c-b630-447e-9bb7-3368ba1ccd6a"),
     ("APUMIA Carbon-CBAM Border Ledger ($499)", "Zero-Float EU Reg. 2023/956 Embedded Emissions & Certificate Verifier", "https://apumiaaifund.github.io/carbon-cbam-ledger-demo/", "https://app.lava.top/products/6e56c5e9-8c33-4750-a699-cc005068d34a"),
+    ("APUMIA US Enterprise & M&A Full-Stack Bundle ($999)", "Complete US Flagship Triad: Compliance OS + DealGuard + InsureProof ($1,297 value, Save $298)", "https"+"://apumiaaifund.github.io/", "https://app.lava.top/products/7f76c41c-cc31-4130-bb8e-636d47e7749c"),
 ]
 
 
