@@ -47,3 +47,5 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - Commercial Insurance Renewal Credit Calculator (Free Zero-Float Underwriting Tool): https://apumiaaifund.github.io/insurance-renewal-calculator/
 
 - Multi-Client CPA & Fractional CFO Suite ($199, Zero-Float Practice ROI Tool): https://apumiaaifund.github.io/cpa-suite/
+
+- APUMIA AIAct-NIST Auditor ($499, EU AI Act & NIST AI RMF Deterministic Engine): https://apumiaaifund.github.io/aiact-nist-auditor-demo/

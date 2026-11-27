@@ -6,7 +6,8 @@
     "coldchain-ledger-demo":{name:"APUMIA ColdChain Ledger (FDA FSMA 204)",price:"$249",uuid:"dc30635a-ffe4-45e8-a135-7734590f6daa"},
     "agentspend-firewall-demo":{name:"APUMIA AgentSpend Firewall (AI FinOps)",price:"$299",uuid:"26129651-3b9f-4c0b-aae3-5a8f558e6f9e"},
     "grantaudit-2cfr-demo":{name:"APUMIA GrantAudit 2CFR (US Federal 200)",price:"$299",uuid:"3ca7d525-9932-4a54-af3d-e6e03badc092"},
-    "orbital-sim-demo":{name:"APUMIA Orbital-Sim Core (no_std Rust LEO)",price:"$349",uuid:"85de1430-da5b-4665-8d06-62557dc3a04d"}
+    "orbital-sim-demo":{name:"APUMIA Orbital-Sim Core (no_std Rust LEO)",price:"$349",uuid:"85de1430-da5b-4665-8d06-62557dc3a04d"},
+    "aiact-nist-auditor-demo":{name:"APUMIA AIAct-NIST Auditor (EU AI Act & NIST)",price:"$499",uuid:"84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"}
   };
   const slug=Object.keys(CFG).find(k=>location.pathname.includes(k))||"compliance-os-demo";
   const meta=CFG[slug];
