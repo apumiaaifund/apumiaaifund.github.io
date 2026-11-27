@@ -14,6 +14,7 @@ FLAGSHIPS = [
     ("APUMIA AgentSpend Firewall ($299)", "Zero-Float AI Agent Budget & Liability Circuit Breaker", "https://apumiaaifund.github.io/agentspend-firewall-demo/", "https://app.lava.top/products/26129651-3b9f-4c0b-aae3-5a8f558e6f9e"),
     ("APUMIA Multi-Client CPA & Auditor Pro Suite ($199)", "Bank-Ready APUMIA-BP-2026 Plans, 3-Way Match, WH-347 & Merchant Fee Audits for 20-80 Clients", "https://apumiaaifund.github.io/cpa-suite/", "https://app.lava.top/products/723f8cbd-4405-4041-a217-b68443c0bd25"),
     ("APUMIA FinCEN BOI & AML Guard ($399)", "Zero-Float 31 CFR 1010.380 Beneficial Ownership & BSA CTR/Structuring Verifier", "https://apumiaaifund.github.io/fincen-boi-aml-demo/", "https://app.lava.top/products/43497c7c-b630-447e-9bb7-3368ba1ccd6a"),
+    ("APUMIA Carbon-CBAM Border Ledger ($499)", "Zero-Float EU Reg. 2023/956 Embedded Emissions & Certificate Verifier", "https://apumiaaifund.github.io/carbon-cbam-ledger-demo/", "https://app.lava.top/products/6e56c5e9-8c33-4750-a699-cc005068d34a"),
 ]
 
 

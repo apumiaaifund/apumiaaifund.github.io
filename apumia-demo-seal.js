@@ -7,7 +7,7 @@
     "agentspend-firewall-demo":{name:"APUMIA AgentSpend Firewall (AI FinOps)",price:"$299",uuid:"26129651-3b9f-4c0b-aae3-5a8f558e6f9e"},
     "grantaudit-2cfr-demo":{name:"APUMIA GrantAudit 2CFR (US Federal 200)",price:"$299",uuid:"3ca7d525-9932-4a54-af3d-e6e03badc092"},
     "orbital-sim-demo":{name:"APUMIA Orbital-Sim Core (no_std Rust LEO)",price:"$349",uuid:"85de1430-da5b-4665-8d06-62557dc3a04d"},
-    "fincen-boi-aml-demo":{name:"APUMIA FinCEN BOI & AML Guard",price:"$399",uuid:"43497c7c-b630-447e-9bb7-3368ba1ccd6a"},"aiact-nist-auditor-demo":{name:"APUMIA AIAct-NIST Auditor (EU AI Act & NIST)",price:"$499",uuid:"84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"}
+    "carbon-cbam-ledger-demo":{name:"APUMIA Carbon-CBAM Border Ledger",price:"$499",uuid:"6e56c5e9-8c33-4750-a699-cc005068d34a"},"fincen-boi-aml-demo":{name:"APUMIA FinCEN BOI & AML Guard",price:"$399",uuid:"43497c7c-b630-447e-9bb7-3368ba1ccd6a"},"aiact-nist-auditor-demo":{name:"APUMIA AIAct-NIST Auditor (EU AI Act & NIST)",price:"$499",uuid:"84b5b45a-92e2-4e83-a6fa-8a15eb008f2e"}
   };
   const slug=Object.keys(CFG).find(k=>location.pathname.includes(k))||"cpa-suite";
   const meta=CFG[slug];

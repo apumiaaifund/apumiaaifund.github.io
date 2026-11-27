@@ -54,3 +54,5 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - AI Agent Runaway Burn Calculator: https://apumiaaifund.github.io/ai-finops-burn-calculator/
 
 - SYSTEM #51 APUMIA FinCEN BOI & AML Guard ($399): https://apumiaaifund.github.io/fincen-boi-aml-demo/
+
+- SYSTEM #52 APUMIA Carbon-CBAM Border Ledger ($499): https://apumiaaifund.github.io/carbon-cbam-ledger-demo/
