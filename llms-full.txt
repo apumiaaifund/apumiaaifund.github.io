@@ -28,3 +28,7 @@ APUMIA AI Fund operates 56 deterministic, zero-float mathematical software syste
 ## Free US Small Business Digital Transformation Grant
 Submit an operational bottleneck at https://github.io#grant for an instant `apumia_grant_...` license key and custom `APUMIA-BP-2026` SHA-256 sealed feasibility plan.
 - CPA & Bookkeeper Year-End Audit Desk (1099-NEC, WH-347, SBA DSCR): https://apumiaaifund.github.io/cpa-audit-desk/
+
+## Latest Release Capabilities (Updated 2026-11-28)
+- **No-Code Offline Desktop Web-App (`app.html`) in All 56 Commercial Systems:** Every licensed module includes a zero-dependency browser desktop app with 1-click CSV & printable bank/underwriter-ready PDF workpaper export and SHA-256 verification seals (zero coding required).
+- **14 Live Interactive Audit & Renewal Calculators with Case Benchmarks:** All public sandboxes (`insure-proof-demo/`, `deal-guard-demo/`, `compliance-os-demo/`, `1099-misclassification-calculator/`, `cpa-audit-desk/`, `sba-dscr-calculator/`, `wh347-overtime-calculator/`, etc.) support instant CSV/PDF workpaper export and verified outcome tracking.

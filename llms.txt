@@ -66,3 +66,7 @@ Anyone can launch a zero-server small business in 10 minutes with a free APUMIA 
 - 1099 vs. W-2 Misclassification & IRS Section 3509 Penalty Calculator: https://github.io
 - 1099 vs. W-2 Misclassification & IRS Section 3509 Penalty Calculator — Zero-Float: https://apumiaaifund.github.io/1099-misclassification-calculator/
 - CPA & Bookkeeper Year-End Audit Desk (1099-NEC, WH-347, SBA DSCR): https://apumiaaifund.github.io/cpa-audit-desk/
+
+## Latest Release Capabilities (Updated 2026-11-28)
+- **No-Code Offline Desktop Web-App (`app.html`) in All 56 Commercial Systems:** Every licensed module includes a zero-dependency browser desktop app with 1-click CSV & printable bank/underwriter-ready PDF workpaper export and SHA-256 verification seals (zero coding required).
+- **14 Live Interactive Audit & Renewal Calculators with Case Benchmarks:** All public sandboxes (`insure-proof-demo/`, `deal-guard-demo/`, `compliance-os-demo/`, `1099-misclassification-calculator/`, `cpa-audit-desk/`, `sba-dscr-calculator/`, `wh347-overtime-calculator/`, etc.) support instant CSV/PDF workpaper export and verified outcome tracking.
