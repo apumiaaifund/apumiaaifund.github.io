@@ -30,13 +30,21 @@
     const hash = Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, "0")).join("");
     const verifyUrl = "https://apumia.space" + hash;
 
-    // Anchor zero-PII SHA-256 hash into apumia.space D1 immutable ledger
-    fetch("https://apumia.space", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ hash, module: path }),
-      keepalive: true
-    }).catch(() => {});
+    // Compute lightweight 16-bit SHA-256 Proof-of-Work (~15ms) and anchor zero-PII hash
+    (async () => {
+      let pow_nonce = 0;
+      for (; pow_nonce < 500000; pow_nonce++) {
+        const pb = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(hash + ":" + pow_nonce));
+        const view = new DataView(pb);
+        if (view.getUint16(0) === 0) break;
+      }
+      fetch("https://apumia.space", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ hash, module: path, pow_nonce }),
+        keepalive: true
+      }).catch(() => {});
+    })();
 
     const box = document.createElement("div");
     box.style.cssText = "max-width:820px;margin:18px auto;padding:18px 20px;background:#0f172a;border:1px solid #38bdf855;border-radius:12px;font-family:system-ui,-apple-system,sans-serif;color:#e2e8f0;font-size:13px";
