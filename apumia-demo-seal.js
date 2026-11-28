@@ -50,6 +50,7 @@
     '</div>';
 
   document.addEventListener("DOMContentLoaded", () => {
+    box.insertAdjacentHTML("beforeend", '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed #334155;font-size:11px;color:#94a3b8">Deterministic Integrity &amp; Calculation Record &mdash; verifies mathematical consistency and UTC timestamp via SHA-256 only. Not a statutory electronic signature, legal, or CPA opinion.</div>');
     document.body.appendChild(box);
     const btn = document.getElementById("apu-copy-link");
     if (btn) {
